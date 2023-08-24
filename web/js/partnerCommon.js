@@ -1,7 +1,6 @@
 const localApiUrl = "http://localhost:8080";
 const devApiUrl = "http://117.52.92.85:8011";
 const prodApiUrl = "http://117.52.92.85:8011";
-const prodimgUrl = "http://117.52.92.85:8011/PARTNER_TEMP/";
 
 /**
  * 이미지 업로드 테스트는 개발서버 및 운영서버에서만 가능합니다.
@@ -27,7 +26,7 @@ function getPartnerMainList(api){
 
     let parameter = {
         company : {COMPANY_CD : '1000'},
-        IMG_URL : prodimgUrl,
+        IMG_URL : url + '/PARTNER_TEMP/',
         blurbParam : {
             vvvipMainYouTube : 'ADV2023073000020',
             vvvipMain : 'ADV2023073000023',
@@ -311,7 +310,7 @@ function getPartnerDetail(api, partnerCd){
     let param = {
         PARTNER_CD : partnerCd,
         COMPANY_CD : '1000',
-        IMG_URL : prodimgUrl,
+        IMG_URL : url + '/PARTNER_TEMP/',
     }
     $.ajax({
         type: "POST",
