@@ -1,7 +1,12 @@
-const devApiUrl = "http://localhost:8080";
+const localApiUrl = "http://localhost:8080";
+const devApiUrl = "http://117.52.92.85:8011";
 const prodApiUrl = "http://117.52.92.85:8011";
 const prodimgUrl = "http://117.52.92.85:8012";
 const imgUrl =  "/PARTNER_TEMP/";
+
+/**
+ * 이미지 업로드 테스트는 개발서버 및 운영서버에서만 가능합니다.
+ */
 
 /** 메인페이지 광고 그리기
  *
@@ -9,7 +14,15 @@ const imgUrl =  "/PARTNER_TEMP/";
  */
 function getPartnerMainList(api){
 
-    let url = api === 'dev' ? devApiUrl : prodApiUrl;
+    let url;
+
+    if(api == 'local'){
+     url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
 
     let parameter = {
         company : {COMPANY_CD : '1000'},
@@ -281,11 +294,20 @@ function getPartnerMainList(api){
 
 /** 거래처광고 상세보기
  * param 오브젝트 정의
- *  @partnerCd : 'test'
+ *  @partnerCd : 'PT200004123'
  */
 function getPartnerDetail(api, partnerCd){
     let result;
-    let url = api === 'dev' ? devApiUrl : prodApiUrl;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
     let param = {
         PARTNER_CD : partnerCd,
         COMPANY_CD : '1000',
