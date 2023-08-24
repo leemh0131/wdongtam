@@ -1,0 +1,78 @@
+/* swiper 기본옵션 */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* mainSwiper01 */
+.mainSwiper01 {
+    padding: 20px 0 20px 0;
+}
+
+.mainSwiper01 .swiper-scrollbar {
+    border-radius: 100px;
+    background: #F1F1F1;
+    bottom: 0;
+    height: 2px;
+    left: 20px;
+    width: calc(100% - 40px)
+}
+
+.mainSwiper01 .swiper-scrollbar-drag {
+    border-radius: 100px;
+    background: rgba(153, 153, 153, 0.60);
+}
+
+/* mainSwiper02 */
+.mainSwiper02 .swiper-slide {
+    background: none;
+    box-shadow: 0px 0px 20px 0px rgba(17, 17, 17, 0.05);
+    display: block;
+}
+
+
+/* mainSwiper03 */
+.mainSwiper03 {
+    height: 650px;
+}
+
+.mainSwiper03 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: none;
+    height: calc((100% - 20px) / 2) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* mainSwiper04 */
+.mainSwiper04 {
+    height: 700px;
+}
+
+.mainSwiper04 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: none;
+    height: calc((100% - 40px) / 3) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name=”format-detection” content=”no” />
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="title" content="">
+    <meta name="Subject" content="">
+    <meta name="keywords" content="">
+    <meta name="Descript-xion" content="">
+    <meta name="Description" content="">
+
+    <link rel="icon" href="" type="image/x-icon" sizes="16x16">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>우리동네탐정</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="header" class="header">
+            <!-- mobile header -->
+            <div class="header_wrap mo">
+                <div class="header_top">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">
+                        <i class="i i_menu"></i>
+                    </button>
+                </div>
+                <div class="header_bottom">
+                    <div class="header_input">
+                        <input type="text" placeholder="탐정과 행정사를 한번에 검색해보세요!">
+                        <button type="button">
+                            <i class="i i_search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pc header -->
+            <div class="header_wrap pc">
+                <div class="header_top">
+                    <div class="container">
+                        <div class="header_l">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                            <div class="header_input">
+                                <input type="text" placeholder="탐정과 행정사를 한번에 검색해보세요!">
+                                <button type="button">
+                                    <i class="i i_search"></i>
+                                </button>
+                            </div>
+                            <div class="search_group">
+                                <button type="button" class="header_search">상세검색</button>
+                                <div class="search_box">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h2>지역별<button type="button" class="btn_right"></button></h2>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">전체</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">서울</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">경기</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">인천</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">대전</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">대구</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">부산</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">광주</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">울산</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">세종</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">강원</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">충북</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">충남</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">전북</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">전남</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">경북</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">경남</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">제주</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <h2>지역별<button type="button" class="btn_right"></button></h2>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">탐정</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">행정사</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">디지털업체</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="header_r">
+                            <a href="#"><b>업체광고문의</b>는 여기서 의뢰하세요</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_bottom">
+                    <div class="container">
+                        <div class="header_l">
+                            <ul>
+                                <li>
+                                    <a href="#">탐정찾기</a>
+                                </li>
+                                <li>
+                                    <a href="#">행정사찾기</a>
+                                </li>
+                                <li>
+                                    <a href="#">상담의뢰하기</a>
+                                </li>
+                                <li>
+                                    <a href="#">커뮤니티</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header_r">
+                            <ul>
+                                <li>
+                                    <a href="#">로그인</a>
+                                </li>
+                                <li>
+                                    <a href="#">고객센터</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- s:모바일 메뉴 -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5>전체메뉴</h5>
+                <ul>
+                    <li>
+                        <a href="#">로그인</a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas_banner">
+                    <img src="img/sample/sample_06.png" alt="">
+                </div>
+                <div class="menu">
+                    <h2>업체가 고민이라면 지금</h2>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_detective.png" alt="">
+                                    </dt>
+                                    <dd>탐정찾기</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_secretary.png" alt="">
+                                    </dt>
+                                    <dd>행정사찾기</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_chat_2.png" alt="">
+                                    </dt>
+                                    <dd>상담의뢰</dd>
+                                </dl>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="notice">
+                    <ul>
+                        <li>공지사항</li>
+                        <li>의뢰상담글을 작성하진 모든분께 스타벅스 아메리카노</li>
+                        <li>
+                            <button type="button">
+                                <img src="img/icon/i_chevron_right_w.png" alt="">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <main class="mo">
+            <section class="section_01">
+                <div class="swiper mainSwiper01">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <div class="img video">
+                                    <iframe
+                                        width="100%" height="174" src="" class="youtube"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div id="mo_main" class="box_info">
+                                    <h6><!--장일도 탐경사사무소--></h6>
+                                    <p><!--안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. --></p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="swiper-slide">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <img src="img/sample/sample_01.png" alt="">
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </section>
+
+            <section class="section_02">
+                <h1>우리동네탐정에서 탐정과<br>행정사를 한번에 검색해보세요.</h1>
+                <div class="swiper mainSwiper02">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                                <img src="img/sample/sample_02.png" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                                <img src="img/sample/sample_03.png" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                                <img src="img/sample/sample_04.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section_03">
+                <h1>실시간 의뢰상담</h1>
+                <div class="real_time_box">
+                    <ul class="real_time_list">
+                        <li>
+                            <div class="real_time_item">
+                                <p>가족분쟁으로 인한 상담건입니다.</p>
+                                <ul>
+                                    <li>김*우</li>
+                                    <li>2023-07-18</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="real_time_item">
+                                <p>[비밀글] 강아지를 찾고 싶은데, 잃어버린 곳은 서울 구로구 근처쯤인데요.</p>
+                                <ul>
+                                    <li>김*우</li>
+                                    <li>2023-07-18</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="real_time_item">
+                                <p>가족분쟁으로 인한 상담건입니다.</p>
+                                <ul>
+                                    <li>김*우</li>
+                                    <li>2023-07-18</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="real_time_item">
+                                <p>가족분쟁으로 인한 상담건입니다.</p>
+                                <ul>
+                                    <li>김*우</li>
+                                    <li>2023-07-18</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="real_time_item">
+                                <p>가족분쟁으로 인한 상담건입니다.</p>
+                                <ul>
+                                    <li>김*우</li>
+                                    <li>2023-07-18</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section_04">
+                <h1>VVIP 업체<span>광고</span></h1>
+                <div class="swiper mainSwiper03">
+                    <div class="swiper-wrapper">
+                        <!--<div class="swiper-slide">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+
+            <section class="banner banner_01">
+                <a class="banner_wrap">
+                    <h2>업체정보가 도움이 되셨나요?<br><b>더 많은 업체 확인은 조건으로 검색해보세요!</b></h2>
+                </a>
+            </section>
+
+            <section class="section_05">
+                <h1>VIP 업체<span>광고</span></h1>
+                <div class="swiper mainSwiper04">
+                    <div class="swiper-wrapper">
+                        <!--<div class="swiper-slide">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <main class="pc">
+            <section class="section_01">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="box">
+                                <div class="img video">
+                                    <iframe class="youtube" width="328" height="182" src=""
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                    <img src="" onerror="this.src='img/sample/sample_01.png'" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6><!--장일도 탐경사사무소--></h6>
+                                    <p><!--안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다.--> </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                <!--010-2571-3457-->
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="col-3">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+
+            <section class="section_02">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-7">
+                            <img src="img/sample/sample_08.png" alt="">
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="img/sample/sample_09.png" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <img src="img/sample/sample_10.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="main_box">
+                                <h1>공지사항</h1>
+                                <ul>
+                                    <li>
+                                        <dl>
+                                            <dt>[이벤트] 의뢰상담글을 작성하신 모든분께 스타벅스 ICE 아메리카노 기프티콘을 드립니다.</dt>
+                                            <dd>2023-07-18</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>[이벤트] 의뢰상담글을 작성하신 모든분께 스타벅스 ICE 아메리카노 기프티콘을 드립니다.</dt>
+                                            <dd>2023-07-18</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>[이벤트] 의뢰상담글을 작성하신 모든분께 스타벅스 ICE 아메리카노 기프티콘을 드립니다.</dt>
+                                            <dd>2023-07-18</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="main_box">
+                                <h1>실시간 의뢰상담</h1>
+                                <ul>
+                                    <li>
+                                        <dl>
+                                            <dt>가족분쟁으로 인한 상담건입니다.</dt>
+                                            <dd>2023-07-18</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>[비밀글] 가족분쟁으로 인한 상담건입니다.</dt>
+                                            <dd>2023-07-18</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>[비밀글] 가족분쟁으로 인한 상담건입니다.</dt>
+                                            <dd>2023-07-18</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section_03">
+                <div class="container">
+                    <h1 class="title">VVIP 업체<span>광고</span></h1>
+                    <div class="row">
+                       <!-- <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="box">
+                                <div class="img">
+                                    <img src="img/sample/sample_01.png" alt="">
+                                </div>
+                                <div class="box_info">
+                                    <h6>장일도 탐경사사무소</h6>
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="img/icon/i_call.png" alt="">
+                                                010-2571-3457
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <a href="#" class="banner banner_01">
+                        <h2>업체정보가 도움이 되셨나요? <b>더 많은 업체 확인은 조건으로 검색해보세요!</b></h2>
+                    </a>
+                </div>
+
+            </section>
+
+            <section class="section_04">
+                <div class="container">
+                    <h1 class="title">VIP 업체<span>광고</span></h1>
+                    <div class="row">
+                        <!--<div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box type2">
+                                <div class="box_info">
+                                    <p>안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”입니다.안녕하세요 “장일도 탐경사사무소”입니다. 안녕하세요 “장일도
+                                        탐경사사무소”입니다. 안녕하세요 “장일도 탐경사사무소”녕하세요 “장일도 탐경사사무입니다.안녕하세요 “장일도 탐경사사무소”입니다. </p>
+                                    <ul>
+                                        <li>
+                                            (주)갓생솔루션
+                                        </li>
+                                        <li>
+                                            <button type="button">상세보기</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer" class="footer">
+            <!-- mobile footer -->
+            <div class="footer_wrap mo">
+                <div class="footer_top">
+                    <ul>
+                        <li>
+                            <a href="#">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="#">개인정보처리방침</a>
+                        </li>
+                        <li>
+                            <a href="#">이메일 무단수집거부</a>
+                        </li>
+                        <li>
+                            <a href="#">광고문의</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_bottom">
+                    <ul>
+                        <li>
+                            <a href="#">고객센터</a>
+                        </li>
+                        <li>
+                            <a href="#">자주묻는질문</a>
+                        </li>
+                    </ul>
+                    <address>
+                        상호명 : 우리동네탐정<br>
+                        대표 : 박은선 ㅣ 사업자등록번호 : 756-59-00703<br>
+                        통신판매업신고번호 : 제2023-서울금천-0964<br>
+                        대표이메일 : wdongtam@gamil.com<br>
+                        서울특별시 금천구 가산디지털1로 171, 306호-98<br>
+                        (가산동, 가산에스케이 브이원 센터)
+                    </address>
+                    <p>COPYRIGHT ⓒ 우리동네탐정. ALL RIGHT RESERVED.</p>
+                </div>
+            </div>
+
+            <!-- pc footer -->
+            <div class="footer_wrap pc">
+                <div class="footer_top">
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a href="#">이용약관</a>
+                            </li>
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">이메일 무단수집거부</a>
+                            </li>
+                            <li>
+                                <a href="#">광고문의</a>
+                            </li>
+                            <li>
+                                <a href="#">자주묻는질문</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div class="container">
+                        <div class="footer_l">
+                            <a href="#">
+                                <img src="img/logo_b.png" alt="">
+                            </a>
+                            <address>
+                                대표 : 박은선 ㅣ 사업자등록번호 : 756-59-00703<br>
+                                통신판매업신고번호 : 제2023-서울금천-0964 ㅣ 대표이메일 : wdongtam@gamil.com<br>
+                                서울특별시 금천구 가산디지털1로 171, 306호-98(가산동, 가산에스케이 브이원 센터)
+                                <p>COPYRIGHT ⓒ 우리동네탐정. ALL RIGHT RESERVED.</p>
+                            </address>
+                        </div>
+                        <div class="footer_r">
+                            <p>고객센터</p>
+                            <a href="tel:02-6264-8186">02-6264-8186</a>
+                            <h6>평일 09:00-18:00 / 점심시간 12:00-13:00<br>
+                                (주말 및 공휴일 휴무)</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="fixed_menu mo">
+            <div class="fixed_wrap">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_map.png" alt="">
+                                </dt>
+                                <dd>지역별</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_sliders.png" alt="">
+                                </dt>
+                                <dd>분야별</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_chat.png" alt="">
+                                </dt>
+                                <dd>상담의뢰</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_call_center.png" alt="">
+                                </dt>
+                                <dd>고객센터</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_person.png" alt="">
+                                </dt>
+                                <dd>MY</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="lib/swiper-bundle.min.js"></script>
+    <script src="js/examples.js"></script>
+    <script src="js/partnerCommon.js"></script>
+    <script>
+        //getPartnerMainList('dev');
+        getPartnerMainList('prod');
+    </script>
+
+</body>
+
+</html>
