@@ -62,7 +62,67 @@ function getPartnerMainList(api){
 
             //유튜브 메인 광고 그리기
             if(nvl(res.vvvipMainYouTube[0]) != ''){
-                //유튜트링크
+                let mainPcHtml =
+                    `<div class="col-6">
+                        <div class="box">
+                            <div class="img video">
+                                <iframe class="youtube" width="328" height="182" src="` + res.vvvipMainYouTube[0].youtube_link + `"
+                                        title="YouTube video player" frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen></iframe>
+                                <img src="` + res.vvvipMainYouTube[0].img_url + `" onError="this.src='img/sample/sample_01.png'" alt="">
+                            </div>
+                            <div class="box_info">
+                                <h6>` + res.vvvipMainYouTube[0].partner_nm + `</h6>
+                                <p>` + res.vvvipMainYouTube[0].company_intro + `</p>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icon/i_call.png" alt="">
+                                            ` + res.vvvipMainYouTube[0].tel_no + `
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button onclick="blurbDetailPage(this)" id="` + res.vvvipMainYouTube[0].partner_cd + `" type="button">상세보기</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`;
+
+                let mainMoHtml =
+                    `<div class="swiper-slide">
+                        <div class="box">
+                            <div class="img video">
+                                <iframe
+                                    width="100%" height="174" src="` + res.vvvipMainYouTube[0].youtube_link + `" class="youtube"
+                                    title="YouTube video player" frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen></iframe>
+                            </div>
+                            <div class="box_info">
+                                <h6>` + res.vvvipMainYouTube[0].partner_nm + `</h6>
+                                <p>` + res.vvvipMainYouTube[0].company_intro + `</p>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/icon/i_call.png" alt="">
+                                                ` + res.vvvipMainYouTube[0].tel_no + `
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button onclick="blurbDetailPage(this)" id="` + res.vvvipMainYouTube[0].partner_cd + `" type="button">상세보기</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`;
+
+                $("main.pc section.section_01 div.row").append(mainPcHtml);
+
+                $("main.mo section.section_01 div.swiper-wrapper").append(mainMoHtml);
+
+                /*//유튜트링크
                 $(".youtube").attr("src", res.vvvipMainYouTube[0].youtube_link);
                 //$("main.pc section.section_01 div.col-6 iframe").attr("src", res.vvvipMainYouTube[0].youtube_link);
                 //이미지
@@ -79,6 +139,10 @@ function getPartnerMainList(api){
                 //번호
                 $("main.pc section.section_01 div.col-6 div.box_info a").html('<img src="img/icon/i_call.png" alt="">'+res.vvvipMainYouTube[0].tel_no);
                 $("#mo_main a").html('<img src="img/icon/i_call.png" alt="">'+res.vvvipMainYouTube[0].tel_no);
+
+                //상세보기
+                $("main.pc section.section_01 div.col-6 div.box_info button").attr("id", res.vvvipMainYouTube[0].partner_cd);
+                $("#mo_main button").attr("id", res.vvvipMainYouTube[0].partner_cd);*/
             }
 
             //메인 광고 그리기
@@ -103,7 +167,7 @@ function getPartnerMainList(api){
                                     </a>
                                 </li>
                                 <li>
-                                    <button type="button">상세보기</button>
+                                    <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
                                 </li>
                             </ul>
                         </div>
@@ -129,7 +193,7 @@ function getPartnerMainList(api){
                                     </a>
                                 </li>
                                 <li>
-                                    <button type="button">상세보기</button>
+                                    <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
                                 </li>
                             </ul>
                         </div>
@@ -141,6 +205,7 @@ function getPartnerMainList(api){
                     let html = col3Content;
                     html = html.replace('img_url', vvvipMain[i].img_url);
                     html = html.replace('partner_nm', vvvipMain[i].partner_nm);
+                    html = html.replace('partner_cd', vvvipMain[i].partner_cd);
                     html = html.replace('company_intro', vvvipMain[i].company_intro);
                     html = html.replace('tel_no', vvvipMain[i].tel_no);
                     $("main.pc section.section_01 div.row").append(html);
@@ -175,7 +240,7 @@ function getPartnerMainList(api){
                                         </a>
                                     </li>
                                     <li>
-                                        <button type="button">상세보기</button>
+                                        <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
                                     </li>
                                 </ul>
                             </div>
@@ -199,7 +264,7 @@ function getPartnerMainList(api){
                                     </a>
                                 </li>
                                 <li>
-                                    <button type="button">상세보기</button>
+                                    <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
                                 </li>
                             </ul>
                         </div>
@@ -213,6 +278,7 @@ function getPartnerMainList(api){
 
                     html = html.replace('img_url', vvipBox[i].img_url);
                     html = html.replace('partner_nm', vvipBox[i].partner_nm);
+                    html = html.replace('partner_cd', vvipBox[i].partner_cd);
                     html = html.replace('company_intro', vvipBox[i].company_intro);
                     html = html.replace('tel_no', vvipBox[i].tel_no);
                     $("main.pc section.section_03 div.row").append(html);
@@ -221,6 +287,7 @@ function getPartnerMainList(api){
 
                     moHtml = moHtml.replace('img_url', vvipBox[i].img_url);
                     moHtml = moHtml.replace('partner_nm', vvipBox[i].partner_nm);
+                    moHtml = moHtml.replace('partner_cd', vvipBox[i].partner_cd);
                     moHtml = moHtml.replace('company_intro', vvipBox[i].company_intro);
                     moHtml = moHtml.replace('tel_no', vvipBox[i].tel_no);
                     $("main.mo section.section_04").find(".swiper-wrapper").append(moHtml);
@@ -232,21 +299,21 @@ function getPartnerMainList(api){
             if(nvl(res.vipBox) != ''){
 
                 let vipCol3Content = `
-    <div class="col-3">
-        <div class="box type2">
-            <div class="box_info">
-                <p>company_intro</p>
-                <ul>
-                    <li>
-                        partner_nm
-                    </li>
-                    <li>
-                        <button type="button">상세보기</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>`;
+                    <div class="col-3">
+                        <div class="box type2">
+                            <div class="box_info">
+                                <p>company_intro</p>
+                                <ul>
+                                    <li>
+                                        partner_nm
+                                    </li>
+                                    <li>
+                                        <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`;
 
                 let moContent = `
                 <div class="swiper-slide">
@@ -258,7 +325,7 @@ function getPartnerMainList(api){
                                     partner_nm
                                 </li>
                                 <li>
-                                    <button type="button">상세보기</button>
+                                    <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
                                 </li>
                             </ul>
                         </div>
@@ -271,12 +338,14 @@ function getPartnerMainList(api){
 
                     let html = vipCol3Content;
                     html = html.replace('partner_nm', vipBox[i].partner_nm);
+                    html = html.replace('partner_cd', vipBox[i].partner_cd);
                     html = html.replace('company_intro', vipBox[i].company_intro);
                     html = html.replace('tel_no', vipBox[i].tel_no);
                     $("main.pc section.section_04 div.row").append(html);
 
                     let moHtml = moContent;
                     moHtml = moHtml.replace('partner_nm', vipBox[i].partner_nm);
+                    moHtml = moHtml.replace('partner_cd', vipBox[i].partner_cd);
                     moHtml = moHtml.replace('company_intro', vipBox[i].company_intro);
                     $("main.mo section.section_05").find(".swiper-wrapper").append(moHtml);
 
@@ -288,6 +357,21 @@ function getPartnerMainList(api){
             res = {x : x, o : o, e : e};
         }
     });
+
+}
+
+/** 광고상세페이지로 이동
+ *
+ * @param 거래처코드
+ */
+function blurbDetailPage(e){
+    if(nvl(e.id) == '' || nvl(e.id) == 'partner_cd'){
+        console.log("partner_cd 404 error");
+        return;
+    }
+
+    // 페이지 이동
+    window.location.href = 'blurbDetail?partnerCd=' + e.id;
 
 }
 
