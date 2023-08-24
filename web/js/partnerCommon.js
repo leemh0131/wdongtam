@@ -1,11 +1,12 @@
 const localApiUrl = "http://localhost:8080";
 const devApiUrl = "http://117.52.92.85:8011";
 const prodApiUrl = "http://117.52.92.85:8011";
-const prodimgUrl = "http://117.52.92.85:8012";
-const imgUrl =  "/PARTNER_TEMP/";
+const prodimgUrl = "http://117.52.92.85:8011/PARTNER_TEMP/";
 
 /**
  * 이미지 업로드 테스트는 개발서버 및 운영서버에서만 가능합니다.
+ * 개발서버
+ * mklink /d "C:\qrayTomcat\apache-tomcat-9.0.62-8011-partner\webapps\ROOT\PARTNER_TEMP" "C:\PARTNER_TEMP"
  */
 
 /** 메인페이지 광고 그리기
@@ -26,7 +27,7 @@ function getPartnerMainList(api){
 
     let parameter = {
         company : {COMPANY_CD : '1000'},
-        IMG_URL : prodimgUrl + imgUrl,
+        IMG_URL : prodimgUrl,
         blurbParam : {
             vvvipMainYouTube : 'ADV2023073000020',
             vvvipMain : 'ADV2023073000023',
@@ -54,12 +55,11 @@ function getPartnerMainList(api){
             if(nvl(res.map) != ''){
                 res = res.map;
             } else if(nvl(res.error) != ''){
-                console.log("getPartnerList error", res.error);
-                return;
+                console.log("getPartnerDetail error", res.error);
             } else {
-                console.log("getPartnerList error");
-                return;
+                console.log("getPartnerDetail error");
             }
+            console.log(res);
 
             //유튜브 메인 광고 그리기
             if(nvl(res.vvvipMainYouTube[0]) != ''){
@@ -311,7 +311,7 @@ function getPartnerDetail(api, partnerCd){
     let param = {
         PARTNER_CD : partnerCd,
         COMPANY_CD : '1000',
-        IMG_URL : prodimgUrl + imgUrl,
+        IMG_URL : prodimgUrl,
     }
     $.ajax({
         type: "POST",
@@ -327,6 +327,7 @@ function getPartnerDetail(api, partnerCd){
             } else {
                 console.log("getPartnerDetail error");
             }
+            console.log(result);
         },
         error: function (x, o, e) {
             result = {x : x, o : o, e : e};
