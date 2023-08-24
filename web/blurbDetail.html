@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>임시 광고상세</title>
+</head>
+<body>
+    <h1>광고상세</h1>
+    <div>
+        <h2>이름</h2>
+        <p id="PARTNER_NM" ></p>
+    </div>
+    <div>
+        <h2>전화번호</h2>
+        <p id="TEL_NO" ></p>
+    </div>
+    <div>
+        <h2>홈페이지</h2>
+        <p id="HOME_PAGE"></p>
+    </div>
+    <div>
+        <h2>카카오톡</h2>
+        <p id="KAKAOTALK"></p>
+    </div>
+    <div>
+        <h2>텔레그램</h2>
+        <p id="TELEGRAM"></p>
+    </div>
+    <div>
+        <h2>유튜브</h2>
+        <p id="YOUTUBE_LINK"></p>
+    </div>
+    <div>
+        <h2>업무 가능 지역</h2>
+        <p id="JOB_ZONE"></p>
+    </div>
+    <div>
+        <h2>업체소개</h2>
+        <p id="COMPANY_INTRO"></p>
+    </div>
+    <hr>
+        <h2>후기등록</h2>
+        <form id="data-form">
+            <label for="name">이름:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="ip">아이피:</label>
+            <input type="text" id="ip" name="ip"><br><br>
+
+            <label for="date">날짜:</label>
+            <input type="text" id="date" name="date"><br><br>
+
+            <label for="kakao">카카오 아이디:</label>
+            <input type="text" id="kakao" name="kakao"><br><br>
+
+            <label for="seq">SEQ:</label>
+            <input type="text" id="seq" name="seq"><br><br>
+
+            <label for="rating">별점:</label>
+            <input type="text" id="rating" name="rating"><br><br>
+
+            <label for="content">내용:</label><br>
+            <textarea id="content" name="content" rows="4" cols="50"></textarea><br><br>
+
+            <button type="button" id="submit">후기등록</button>
+        </form>
+    <hr>
+    <div>
+        <h2>이용후기</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>아이피</th>
+                    <th>날짜</th>
+                    <th>카카오 아이디</th>
+                    <th>SEQ</th>
+                    <th>별점</th>
+                    <th>내용</th>
+                </tr>
+            </thead>
+            <tbody id="review-body">
+                <tr>
+                    <td>John</td>
+                    <td>123.456.789.0</td>
+                    <td>2023-08-24</td>
+                    <td>kakao123</td>
+                    <td>1</td>
+                    <td>4.5</td>
+                    <td>좋은 서비스에 만족합니다.</td>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>987.654.321.0</td>
+                    <td>2023-08-25</td>
+                    <td>kakao456</td>
+                    <td>2</td>
+                    <td>3.8</td>
+                    <td>가격이 조금 비싸요.</td>
+                </tr>
+                <!-- 여러 개의 데이터 행을 추가할 수 있습니다. -->
+            </tbody>
+        </table>
+    </div>
+    <hr>
+</body>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="lib/swiper-bundle.min.js"></script>
+    <script src="js/examples.js"></script>
+    <script src="js/partnerCommon.js"></script>
+    <script>
+
+        const url = new URL(window.location.href);
+        // URLSearchParams 객체
+        const urlParams = url.searchParams;
+        let partnerCd = nvl(urlParams.get('partnerCd'));
+
+        //getPartnerDetail('dev');
+        //getPartnerDetail('local');
+        getPartnerDetail('dev', partnerCd);
+
+        //후기등록버튼 이벤트
+        $("#submit").click(function() {
+            var formData = $("#data-form").serializeArray();
+
+            // formData 배열을 순회하며 데이터 출력
+            $.each(formData, function(index, field){
+                console.log(field.name + ": " + field.value);
+            });
+
+            // 필요한 추가 처리를 수행할 수 있습니다.
+            // formData 데이터를 가지고 back단가서 데이터 저장
+
+
+        });
+
+    </script>
+
+</html>

@@ -346,11 +346,12 @@ function getPartnerMainList(api){
 function blurbDetailPage(e){
     if(nvl(e.id) == '' || nvl(e.id) == 'partner_cd'){
         console.log("partner_cd 404 error");
+        alert("광고상세페이지 이동오류");
         return;
     }
 
     // 페이지 이동
-    window.location.href = 'blurbDetail?partnerCd=' + e.id;
+    window.location.href = 'blurbDetail.html?partnerCd=' + e.id;
 
 }
 
@@ -390,12 +391,71 @@ function getPartnerDetail(api, partnerCd){
                 console.log("getPartnerDetail error");
             }
             console.log(result);
+
+            let partnerInfo = result.partner;
+
+            //임시 테스트 코딩
+            $('#PARTNER_NM').text(nvl(partnerInfo.PARTNER_NM, '정보없음'));
+            $('#TEL_NO').text(nvl(partnerInfo.TEL_NO, '정보없음'));
+            $('#HOME_PAGE').text(nvl(partnerInfo.HOME_PAGE, '정보없음'));
+            $('#KAKAOTALK').text(nvl(partnerInfo.KAKAOTALK, '정보없음'));
+            $('#TELEGRAM').text(nvl(partnerInfo.TELEGRAM, '정보없음'));
+            $('#YOUTUBE_LINK').text(nvl(partnerInfo.YOUTUBE_LINK, '정보없음'));
+            $('#JOB_ZONE').text(nvl(partnerInfo.JOB_ZONE, '정보없음'));
+            $('#COMPANY_INTRO').text(nvl(partnerInfo.COMPANY_INTRO, '정보없음'));
+
+            //업체후기 정보를 쿼리로 가지고와야함 ex)
+            let tempReviewList = [
+                {
+                    name : '홍길동',
+                    ip : '127.0.0.1',
+                    date : '2023-08-23',
+                    kakao : 'test1',
+                    seq : '1',
+                    rating : '5',
+                    context : '종은 서비스에 만족합니다.',
+                },
+                {
+                    name : '둘리',
+                    ip : '127.0.0.1',
+                    date : '2023-08-23',
+                    kakao : 'test2',
+                    seq : '2',
+                    rating : '1',
+                    context : '별로에요',
+                },
+                {
+                    name : '또치',
+                    ip : '127.0.0.1',
+                    date : '2023-08-23',
+                    kakao : 'test3',
+                    seq : '3',
+                    rating : '5',
+                    context : '종은 서비스에 만족합니다. 2222222222222222',
+                },
+            ]
+
+            //
+            $('#review-body').empty() // 자식요소 제거
+            for(let i = 0; i < tempReviewList.length; i++){
+                let html = `<tr>
+                                <td>` + tempReviewList[i].name + `</td>
+                                <td>` + tempReviewList[i].ip + `</td>
+                                <td>` + tempReviewList[i].date + `</td>
+                                <td>` + tempReviewList[i].kakao + `</td>
+                                <td>` + tempReviewList[i].seq + `</td>
+                                <td>` + tempReviewList[i].rating + `</td>
+                                <td>` + tempReviewList[i].context + `</td>
+                            </tr>`
+                $('#review-body').append(html);
+            }
+
         },
         error: function (x, o, e) {
             result = {x : x, o : o, e : e};
         }
     });
-    return result;
+
 }
 
 var nvl = function (A, B) {
