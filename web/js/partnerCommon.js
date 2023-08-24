@@ -122,27 +122,6 @@ function getPartnerMainList(api){
 
                 $("main.mo section.section_01 div.swiper-wrapper").append(mainMoHtml);
 
-                /*//유튜트링크
-                $(".youtube").attr("src", res.vvvipMainYouTube[0].youtube_link);
-                //$("main.pc section.section_01 div.col-6 iframe").attr("src", res.vvvipMainYouTube[0].youtube_link);
-                //이미지
-                $("main.pc section.section_01 div.col-6 img").attr("src", res.vvvipMainYouTube[0].img_url);
-
-                //거래처명
-                $("main.pc section.section_01 div.col-6 div.box_info h6").text(res.vvvipMainYouTube[0].partner_nm);
-                $("#mo_main h6").text(res.vvvipMainYouTube[0].partner_nm);
-
-                //설명
-                $("main.pc section.section_01 div.col-6 div.box_info p").text(res.vvvipMainYouTube[0].company_intro);
-                $("#mo_main p").text(res.vvvipMainYouTube[0].company_intro);
-
-                //번호
-                $("main.pc section.section_01 div.col-6 div.box_info a").html('<img src="img/icon/i_call.png" alt="">'+res.vvvipMainYouTube[0].tel_no);
-                $("#mo_main a").html('<img src="img/icon/i_call.png" alt="">'+res.vvvipMainYouTube[0].tel_no);
-
-                //상세보기
-                $("main.pc section.section_01 div.col-6 div.box_info button").attr("id", res.vvvipMainYouTube[0].partner_cd);
-                $("#mo_main button").attr("id", res.vvvipMainYouTube[0].partner_cd);*/
             }
 
             //메인 광고 그리기
@@ -467,5 +446,3 @@ var isEmpty = function (obj) {
         return false;
     }
 };
-
-
