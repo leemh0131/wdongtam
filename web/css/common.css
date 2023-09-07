@@ -111,6 +111,36 @@ textarea {
     width: 16px;
 }
 
+.i_share {
+    background: url(../img/icon/i_share.svg) no-repeat;
+    height: 12px;
+    width: 12px;
+}
+
+.i_person_add {
+    background: url(../img/icon/i_person_add.svg);
+    height: 12px;
+    width: 12px;
+}
+
+.i_pin {
+    background: url(../img/icon/i_pin.svg);
+    background-size: cover;
+    height: 14px;
+    width: 14px;
+}
+
+@media (min-width: 992px) {
+    .i_pin {
+        background: url(../img/icon/i_pin.svg);
+        height: 20px;
+        width: 20px;
+    }
+}
+.td_unline {
+    text-decoration: underline;
+}
+
 .header {
     background: #fff;
     border-bottom: 1px solid #F1F1F1;
@@ -695,6 +725,20 @@ address {
 .row>* {
     padding: 0 10px;
 }
+
+.container {
+    padding: 0 20px;
+}
+
+/* @media (min-width: 992px) {
+    .row {
+        margin: 0 -20px;
+    }
+
+    .row>* {
+        padding: 0 20px;
+    }
+} */
 
 @media (min-width: 1400px) {
     .container {

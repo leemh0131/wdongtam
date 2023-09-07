@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name=”format-detection” content=”no” />
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="title" content="">
+    <meta name="Subject" content="">
+    <meta name="keywords" content="">
+    <meta name="Descript-xion" content="">
+    <meta name="Description" content="">
+
+    <link rel="icon" href="" type="image/x-icon" sizes="16x16">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>우리동네탐정</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="header" class="header">
+            <!-- mobile header -->
+            <div class="header_wrap mo">
+                <div class="header_top">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        aria-controls="offcanvasRight">
+                        <i class="i i_menu"></i>
+                    </button>
+                </div>
+                <div class="header_bottom">
+                    <div class="header_input">
+                        <input type="text" placeholder="탐정과 행정사를 한번에 검색해보세요!">
+                        <button type="button">
+                            <i class="i i_search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- pc header -->
+            <div class="header_wrap pc">
+                <div class="header_top">
+                    <div class="container">
+                        <div class="header_l">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                            <div class="header_input">
+                                <input type="text" placeholder="탐정과 행정사를 한번에 검색해보세요!">
+                                <button type="button">
+                                    <i class="i i_search"></i>
+                                </button>
+                            </div>
+                            <div class="search_group">
+                                <button type="button" class="header_search">상세검색</button>
+                                <div class="search_box">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h2>지역별<button type="button" class="btn_right"></button></h2>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">전체</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">서울</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">경기</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">인천</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">대전</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">대구</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">부산</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">광주</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">울산</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">세종</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">강원</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">충북</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">충남</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">전북</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">전남</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">경북</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">경남</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">제주</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-4">
+                                            <h2>지역별<button type="button" class="btn_right"></button></h2>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">탐정</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">행정사</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">디지털업체</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="header_r">
+                            <a href="#"><b>업체광고문의</b>는 여기서 의뢰하세요</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_bottom">
+                    <div class="container">
+                        <div class="header_l">
+                            <ul>
+                                <li>
+                                    <a href="#">탐정찾기</a>
+                                </li>
+                                <li>
+                                    <a href="#">행정사찾기</a>
+                                </li>
+                                <li>
+                                    <a href="#">상담의뢰하기</a>
+                                </li>
+                                <li>
+                                    <a href="#">커뮤니티</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header_r">
+                            <ul>
+                                <li>
+                                    <a href="#">로그인</a>
+                                </li>
+                                <li>
+                                    <a href="#">고객센터</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- s:모바일 메뉴 -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5>전체메뉴</h5>
+                <ul>
+                    <li>
+                        <a href="#">로그인</a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas_banner">
+                    <img src="img/sample/sample_06.png" alt="">
+                </div>
+                <div class="menu">
+                    <h2>업체가 고민이라면 지금</h2>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_detective.png" alt="">
+                                    </dt>
+                                    <dd>탐정찾기</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_secretary.png" alt="">
+                                    </dt>
+                                    <dd>행정사찾기</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_chat_2.png" alt="">
+                                    </dt>
+                                    <dd>상담의뢰</dd>
+                                </dl>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="notice">
+                    <ul>
+                        <li>공지사항</li>
+                        <li>의뢰상담글을 작성하진 모든분께 스타벅스 아메리카노</li>
+                        <li>
+                            <button type="button">
+                                <img src="img/icon/i_chevron_right_w.png" alt="">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="sub_wrap">
+            <div class="container">
+
+                <!--mo-->
+                <div class="detail_top mo">
+                    <div class="row">
+                        <div class="col-12">
+                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                class="swiper detail_img_02">
+                                <div class="swiper-wrapper main-img">
+
+                                </div>
+                            </div>
+                            <div thumbsSlider="" class="swiper detail_img_01">
+                                <div class="swiper-wrapper main-img">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="detail_info">
+                                <div class="detail_title">
+                                    <h1></h1>
+                                    <ul>
+                                        <li>
+                                            <i class="i i_person_add"></i>
+                                        </li>
+                                        <li>
+                                            <i class="i i_share"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <dl class="partner-info">
+
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--pc-->
+                <div class="detail_top pc">
+                    <div class="row">
+                        <div class="col-6">
+                            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                class="swiper detail_img_04">
+                                <div class="swiper-wrapper main-img">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 d-flex">
+                            <div class="detail_info">
+                                <div class="detail_title">
+                                    <h1></h1>
+                                    <ul>
+                                        <li>
+                                            <i class="i i_person_add"></i>
+                                        </li>
+                                        <li>
+                                            <i class="i i_share"></i>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <dl class="partner-info">
+
+                                </dl>
+                            </div>
+                            <div thumbsSlider="" class="swiper detail_img_03">
+                                <div class="swiper-wrapper main-img">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail_body">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="item_area" id="job-field">
+                                <h4>전문분야</h4>
+                                <div class="row">
+                                </div>
+                            </div>
+                            <div class="item_area" id="job-ep" >
+                                <h4>보유장비</h4>
+                                <div class="row">
+                                </div>
+                            </div>
+                            <div class="item_area" id="job-zone">
+                                <h4>업무가능지역 - 지사보유</h4>
+                                <div class="row">
+
+
+                                </div>
+                            </div>
+                            <div class="item_area" id="partner-intro">
+                                <h4>업체소개</h4>
+                                <p></p>
+                            </div>
+
+                            <div class="item_area">
+                                <h4>스페셜 광고</h4>
+                                <div class="swiper_area mo">
+                                    <div class="swiper special_ad">
+                                        <div class="swiper-wrapper" id="special-blurb-mo">
+                                            <!--모바일스페셜광고-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="special_wrap pc">
+                                    <div class="row" id="special-blurb-pc">
+                                        <!--PC스페셜광고-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item_area">
+                                <h4>업체후기</h4>
+                                <div class="review_wrap">
+                                    <div class="review_top">
+                                        <ul class="star">
+                                            <li><img src="img/icon/i_star.svg" alt=""></li>
+                                            <li><img src="img/icon/i_star.svg" alt=""></li>
+                                            <li><img src="img/icon/i_star.svg" alt=""></li>
+                                            <li><img src="img/icon/i_star.svg" alt=""></li>
+                                            <li><img src="img/icon/i_star_g.svg" alt=""></li>
+                                        </ul>
+                                        <span>4.9 l <b>1000개의 평가</b></span>
+                                        <p>실제 업체를 이용한 이용자들이 남긴 후기입니다.</p>
+                                    </div>
+                                    <div class="review_body">
+                                        <ul>
+                                            <li>
+                                                <div class="review_box">
+                                                    <img src="img/icon/i_user.svg" alt="">
+                                                    <div class="review_info">
+                                                        <div class="user_name">다*******</div>
+                                                        <div class="review_top">
+                                                            <ul class="star">
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star_g.svg" alt=""></li>
+                                                            </ul>
+                                                            <span>4.9 l <b>23.06.27 12:42</b></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review_text">
+                                                        <p>6번째 연장하고 처음으로 후기 남깁니다. 추선 친절하고 신속한 상담과 대응이 가장 마음에 듭니다. 그래서
+                                                            5번째 연장하면서 작고 작은 사고? 가 있었어도 신속한 대응 덕분에 문제없이 빠르게 처리해주셨어요. 또한
+                                                            세분화된 서비스 때문에 그때그때 부족하다 싶은 것들만 추가로 구매 가능한 것도 정말 좋은것같아요. 가격이나
+                                                            서비스 퀄리티만 보더라도 이만한 곳은 없어서 앞으로도 계속 연장할 예정입니다. (인기게시글들은 시간이 지나도
+                                                            잘 올라가요) 1인 브랜드를 운영하다보니 혼자 SNS를 관리하기 정말 어려운데, 여기 서비스 하나만 잘
+                                                            세팅해도 마음 편하고 쉽게 운영할 수 있어서 1인 브랜드 사장님들께 꼭 추전드립니다. :)</p>
+                                                    </div>
+                                                    <h4>작업일 : 24시간이내 ㅣ 주문금액 : 100만원 ~ 160만원</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="review_box">
+                                                    <img src="img/icon/i_user.svg" alt="">
+                                                    <div class="review_info">
+                                                        <div class="user_name">다*******</div>
+                                                        <div class="review_top">
+                                                            <ul class="star">
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star_g.svg" alt=""></li>
+                                                            </ul>
+                                                            <span>4.9 l <b>23.06.27 12:42</b></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review_text">
+                                                        <p>6번째 연장하고 처음으로 후기 남깁니다. 추선 친절하고 신속한 상담과 대응이 가장 마음에 듭니다. 그래서
+                                                            5번째 연장하면서 작고 작은 사고? 가 있었어도 신속한 대응 덕분에 문제없이 빠르게 처리해주셨어요. 또한
+                                                            세분화된 서비스 때문에 그때그때 부족하다 싶은 것들만 추가로 구매 가능한 것도 정말 좋은것같아요. 가격이나
+                                                            서비스 퀄리티만 보더라도 이만한 곳은 없어서 앞으로도 계속 연장할 예정입니다. (인기게시글들은 시간이 지나도
+                                                            잘 올라가요) 1인 브랜드를 운영하다보니 혼자 SNS를 관리하기 정말 어려운데, 여기 서비스 하나만 잘
+                                                            세팅해도 마음 편하고 쉽게 운영할 수 있어서 1인 브랜드 사장님들께 꼭 추전드립니다. :)</p>
+                                                    </div>
+                                                    <h4>작업일 : 24시간이내 ㅣ 주문금액 : 100만원 ~ 160만원</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="review_box">
+                                                    <img src="img/icon/i_user.svg" alt="">
+                                                    <div class="review_info">
+                                                        <div class="user_name">다*******</div>
+                                                        <div class="review_top">
+                                                            <ul class="star">
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star_g.svg" alt=""></li>
+                                                            </ul>
+                                                            <span>4.9 l <b>23.06.27 12:42</b></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review_text">
+                                                        <p>6번째 연장하고 처음으로 후기 남깁니다. 추선 친절하고 신속한 상담과 대응이 가장 마음에 듭니다. 그래서
+                                                            5번째 연장하면서 작고 작은 사고? 가 있었어도 신속한 대응 덕분에 문제없이 빠르게 처리해주셨어요. 또한
+                                                            세분화된 서비스 때문에 그때그때 부족하다 싶은 것들만 추가로 구매 가능한 것도 정말 좋은것같아요. 가격이나
+                                                            서비스 퀄리티만 보더라도 이만한 곳은 없어서 앞으로도 계속 연장할 예정입니다. (인기게시글들은 시간이 지나도
+                                                            잘 올라가요) 1인 브랜드를 운영하다보니 혼자 SNS를 관리하기 정말 어려운데, 여기 서비스 하나만 잘
+                                                            세팅해도 마음 편하고 쉽게 운영할 수 있어서 1인 브랜드 사장님들께 꼭 추전드립니다. :)</p>
+                                                    </div>
+                                                    <h4>작업일 : 24시간이내 ㅣ 주문금액 : 100만원 ~ 160만원</h4>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="review_box">
+                                                    <img src="img/icon/i_user.svg" alt="">
+                                                    <div class="review_info">
+                                                        <div class="user_name">다*******</div>
+                                                        <div class="review_top">
+                                                            <ul class="star">
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star.svg" alt=""></li>
+                                                                <li><img src="img/icon/i_star_g.svg" alt=""></li>
+                                                            </ul>
+                                                            <span>4.9 l <b>23.06.27 12:42</b></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review_text">
+                                                        <p>6번째 연장하고 처음으로 후기 남깁니다. 추선 친절하고 신속한 상담과 대응이 가장 마음에 듭니다. 그래서
+                                                            5번째 연장하면서 작고 작은 사고? 가 있었어도 신속한 대응 덕분에 문제없이 빠르게 처리해주셨어요. 또한
+                                                            세분화된 서비스 때문에 그때그때 부족하다 싶은 것들만 추가로 구매 가능한 것도 정말 좋은것같아요. 가격이나
+                                                            서비스 퀄리티만 보더라도 이만한 곳은 없어서 앞으로도 계속 연장할 예정입니다. (인기게시글들은 시간이 지나도
+                                                            잘 올라가요) 1인 브랜드를 운영하다보니 혼자 SNS를 관리하기 정말 어려운데, 여기 서비스 하나만 잘
+                                                            세팅해도 마음 편하고 쉽게 운영할 수 있어서 1인 브랜드 사장님들께 꼭 추전드립니다. :)</p>
+                                                    </div>
+                                                    <h4>작업일 : 24시간이내 ㅣ 주문금액 : 100만원 ~ 160만원</h4>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="pagination">
+                                        <li class="prev">
+                                            <img src="img/icon/i_chevron_left.svg" alt="">
+                                        </li>
+                                        <li class="active">1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                        <li>5</li>
+                                        <li class="next">
+                                            <img src="img/icon/i_chevron_right.svg" alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 pc">
+                            <div class="detail_side_wrap">
+                                <div class="detail_box">
+                                    <p class="red"><span>의뢰인 TIP</span></p>
+                                    <h6>여러 업체들과 충분한 비교상담을 해보시고<br>업체 선정을 하시길 추천드립니다.</h6>
+                                    <button type="button">무료상담 연결하기</button>
+                                </div>
+                                <div class="detail_box">
+                                    <p class="blue"><span>동일 전문분야 업체</span></p>
+                                    <ul id="blurb-side">
+                                        <!--사이드광고-->
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <footer id="footer" class="footer">
+            <!-- mobile footer -->
+            <div class="footer_wrap mo">
+                <div class="footer_top">
+                    <ul>
+                        <li>
+                            <a href="#">이용약관</a>
+                        </li>
+                        <li>
+                            <a href="#">개인정보처리방침</a>
+                        </li>
+                        <li>
+                            <a href="#">이메일 무단수집거부</a>
+                        </li>
+                        <li>
+                            <a href="#">광고문의</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_bottom">
+                    <ul>
+                        <li>
+                            <a href="#">고객센터</a>
+                        </li>
+                        <li>
+                            <a href="#">자주묻는질문</a>
+                        </li>
+                    </ul>
+                    <address>
+                        상호명 : 우리동네탐정<br>
+                        대표 : 박은선 ㅣ 사업자등록번호 : 756-59-00703<br>
+                        통신판매업신고번호 : 제2023-서울금천-0964<br>
+                        대표이메일 : wdongtam@gamil.com<br>
+                        서울특별시 금천구 가산디지털1로 171, 306호-98<br>
+                        (가산동, 가산에스케이 브이원 센터)
+                    </address>
+                    <p>COPYRIGHT ⓒ 우리동네탐정. ALL RIGHT RESERVED.</p>
+                </div>
+            </div>
+
+            <!-- pc footer -->
+            <div class="footer_wrap pc">
+                <div class="footer_top">
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a href="#">이용약관</a>
+                            </li>
+                            <li>
+                                <a href="#">개인정보처리방침</a>
+                            </li>
+                            <li>
+                                <a href="#">이메일 무단수집거부</a>
+                            </li>
+                            <li>
+                                <a href="#">광고문의</a>
+                            </li>
+                            <li>
+                                <a href="#">자주묻는질문</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div class="container">
+                        <div class="footer_l">
+                            <a href="#">
+                                <img src="img/logo_b.png" alt="">
+                            </a>
+                            <address>
+                                대표 : 박은선 ㅣ 사업자등록번호 : 756-59-00703<br>
+                                통신판매업신고번호 : 제2023-서울금천-0964 ㅣ 대표이메일 : wdongtam@gamil.com<br>
+                                서울특별시 금천구 가산디지털1로 171, 306호-98(가산동, 가산에스케이 브이원 센터)
+                                <p>COPYRIGHT ⓒ 우리동네탐정. ALL RIGHT RESERVED.</p>
+                            </address>
+                        </div>
+                        <div class="footer_r">
+                            <p>고객센터</p>
+                            <a href="tel:02-6264-8186">02-6264-8186</a>
+                            <h6>평일 09:00-18:00 / 점심시간 12:00-13:00<br>
+                                (주말 및 공휴일 휴무)</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- <div class="fixed_menu mo">
+            <div class="fixed_wrap">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_map.png" alt="">
+                                </dt>
+                                <dd>지역별</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_sliders.png" alt="">
+                                </dt>
+                                <dd>분야별</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_chat.png" alt="">
+                                </dt>
+                                <dd>상담의뢰</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_call_center.png" alt="">
+                                </dt>
+                                <dd>고객센터</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_person.png" alt="">
+                                </dt>
+                                <dd>MY</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
+    </div>
+
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="lib/swiper-bundle.min.js"></script>
+    <script src="js/examples.js"></script>
+    <script src="js/partnerCommon.js"></script>
+    <script>
+
+        const url = new URL(window.location.href);
+        // URLSearchParams 객체
+        const urlParams = url.searchParams;
+        let partnerCd = nvl(urlParams.get('partnerCd'));
+
+        //getPartnerDetail('dev');
+        //getPartnerDetail('local');
+        getPartnerDetail('dev', partnerCd);
+
+    </script>
+
+</body>
+
+</html>
