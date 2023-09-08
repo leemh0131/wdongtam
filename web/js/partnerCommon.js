@@ -331,6 +331,19 @@ function getPartnerMainList(api){
                 }
             }
 
+            //pc배너
+            if(nvl(res.center_banner_img) != ''){
+                for(let i = 0; i <res.center_banner_img.length; i++){
+                    if(res.center_banner_img[i].table_id == 'CENTER_BANNER_PC'){
+                        $('#main-center-banner-pc').attr('src', res.center_banner_img[i].img_url);
+                    } else {
+                        $('#main-center-banner-mo').attr('src', res.center_banner_img[i].img_url);
+                    }
+                }
+
+            }
+
+
         },
         error: function (x, o, e) {
             res = {x : x, o : o, e : e};
