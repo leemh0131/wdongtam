@@ -724,3 +724,40 @@ var isEmpty = function (obj) {
         return false;
     }
 };
+
+
+function getTest(api, partnerCd){
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    let param = {
+        PARTNER_CD : partnerCd,
+        COMPANY_CD : '1000',
+        IMG_URL : url + '/PARTNER_TEMP/',
+    }
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/partnerDetail2"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+
+            console.log("resTest", res);
+
+
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+}
