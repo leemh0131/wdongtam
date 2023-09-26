@@ -9,6 +9,8 @@ var prodApiUrl = "http://117.52.84.88:8080";
  *
  * 실서버
  * /root/apache-tomcat-admin/webapps/ROOT/ 경로에  PARTNER_TEMP 폴더생성
+ *
+ * sudo umount /root/apache-tomcat-admin/webapps/ROOT/PARTNER_TEMP
  * sudo mount --bind /PARTNER_TEMP/ /root/apache-tomcat-admin/webapps/ROOT/PARTNER_TEMP
  */
 
