@@ -6,6 +6,10 @@ var prodApiUrl = "http://117.52.84.88:8080";
  * 이미지 업로드 테스트는 개발서버 및 운영서버에서만 가능합니다.
  * 개발서버
  * mklink /d "C:\qrayTomcat\apache-tomcat-9.0.62-8011-partner\webapps\ROOT\PARTNER_TEMP" "C:\PARTNER_TEMP"
+ *
+ * 실서버
+ * /root/apache-tomcat-admin/webapps/ROOT/ 경로에  PARTNER_TEMP 폴더생성
+ * sudo mount --bind /PARTNER_TEMP/ /root/apache-tomcat-admin/webapps/ROOT/PARTNER_TEMP
  */
 
 /** 메인페이지 광고 그리기
