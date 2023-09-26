@@ -130,6 +130,222 @@ textarea {
     width: 14px;
 }
 
+.i_geo {
+    background: url(../img/icon/i_geo_alt.svg);
+    height: 16px;
+    width: 16px;
+}
+
+.i_sliders {
+    background: url(../img/icon/i_sliders.svg);
+    height: 16px;
+    width: 16px;
+}
+
+/* 탐정찾기 아이콘 */
+.i_all {
+    background: url(../img/region/i_all.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_busan {
+    background: url(../img/region/i_busan.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_chungbuk {
+    background: url(../img/region/i_chungbuk.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_chungnam {
+    background: url(../img/region/i_chungnam.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_daegu {
+    background: url(../img/region/i_daegu.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_daejeon {
+    background: url(../img/region/i_daejeon.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_gangwon {
+    background: url(../img/region/i_gangwon.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_gw {
+    background: url(../img/region/i_gw.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_gyeongbuk {
+    background: url(../img/region/i_gyeongbuk.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_gyeonggido {
+    background: url(../img/region/i_gyeonggido.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_gyeongnam {
+    background: url(../img/region/i_gyeongnam.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_incheon {
+    background: url(../img/region/i_incheon.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_jeju {
+    background: url(../img/region/i_jeju.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_jeonbuk {
+    background: url(../img/region/i_jeonbuk.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_jeonnam {
+    background: url(../img/region/i_jeonnam.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_sejong {
+    background: url(../img/region/i_sejong.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_seoul {
+    background: url(../img/region/i_seoul.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_uisan {
+    background: url(../img/region/i_uisan.svg);
+    height: 40px;
+    width: 40px;
+}
+
+.i_left {
+    background: url(../img/icon/i_chevron_left.svg);
+    background-size: cover;
+    height: 16px;
+    width: 16px;
+}
+
+.i_right {
+    background: url(../img/icon/i_chevron_right.svg);
+    background-size: cover;
+    height: 16px;
+    width: 16px;
+}
+
+.i_three {
+    background: url(../img/icon/i_three.svg);
+    background-size: cover;
+    height: 16px;
+    width: 16px;
+}
+
+/* active */
+.region_wrap ul li.active .i_all {
+    background: url(../img/region_active/i_all.svg);
+}
+
+.region_wrap ul li.active .i_busan {
+    background: url(../img/region_active/i_busan.svg);
+}
+
+.region_wrap ul li.active .i_chungbuk {
+    background: url(../img/region_active/i_chungbuk.svg);
+}
+
+.region_wrap ul li.active .i_chungnam {
+    background: url(../img/region_active/i_chungnam.svg);
+}
+
+.region_wrap ul li.active .i_daegu {
+    background: url(../img/region_active/i_daegu.svg);
+}
+
+.region_wrap ul li.active .i_daejeon {
+    background: url(../img/region_active/i_daejeon.svg);
+}
+
+.region_wrap ul li.active .i_gangwon {
+    background: url(../img/region_active/i_gangwon.svg);
+}
+
+.region_wrap ul li.active .i_gw {
+    background: url(../img/region_active/i_gw.svg);
+}
+
+.region_wrap ul li.active .i_gyeongbuk {
+    background: url(../img/region_active/i_gyeongbuk.svg);
+}
+
+.region_wrap ul li.active .i_gyeonggido {
+    background: url(../img/region_active/i_gyeonggido.svg);
+}
+
+.region_wrap ul li.active .i_gyeongnam {
+    background: url(../img/region_active/i_gyeongnam.svg);
+}
+
+.region_wrap ul li.active .i_incheon {
+    background: url(../img/region_active/i_incheon.svg);
+}
+
+.region_wrap ul li.active .i_jeju {
+    background: url(../img/region_active/i_jeju.svg);
+}
+
+.region_wrap ul li.active .i_jeonbuk {
+    background: url(../img/region_active/i_jeonbuk.svg);
+}
+
+.region_wrap ul li.active .i_jeonnam {
+    background: url(../img/region_active/i_jeonnam.svg);
+}
+
+.region_wrap ul li.active .i_sejong {
+    background: url(../img/region_active/i_sejong.svg);
+}
+
+.region_wrap ul li.active .i_seoul {
+    background: url(../img/region_active/i_seoul.svg);
+}
+
+.region_wrap ul li.active .i_uisan {
+    background: url(../img/region_active/i_uisan.svg);
+}
+
+
 @media (min-width: 992px) {
     .i_pin {
         background: url(../img/icon/i_pin.svg);
@@ -277,6 +493,7 @@ textarea {
         top: 50px;
         left: 10px;
         width: 280px;
+        z-index: 1;
     }
 
     .search_box.active {
@@ -730,17 +947,16 @@ address {
     padding: 0 20px;
 }
 
-/* @media (min-width: 992px) {
-    .row {
-        margin: 0 -20px;
+@media (min-width: 992px) {
+    .ad_wrap,
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
     }
-
-    .row>* {
-        padding: 0 20px;
-    }
-} */
+}
 
 @media (min-width: 1400px) {
+    .ad_wrap,
     .container {
         max-width: 1200px;
     }

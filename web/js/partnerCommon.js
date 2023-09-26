@@ -1,6 +1,6 @@
-const localApiUrl = "http://localhost:8080";
-const devApiUrl = "http://117.52.92.85:8011";
-const prodApiUrl = "http://117.52.92.85:8011";
+var localApiUrl = "http://localhost:8080";
+var devApiUrl = "http://117.52.92.85:8011";
+var prodApiUrl = "http://117.52.84.88:8080";
 
 /**
  * 이미지 업로드 테스트는 개발서버 및 운영서버에서만 가능합니다.
@@ -676,6 +676,38 @@ function getPartnerDetail(api, partnerCd){
 
 }
 
+function getPartnerSearch(api, param){
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    param.IMG_URL = url + '/PARTNER_TEMP/';
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getPartnerSearch"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
 var nvl = function (A, B) {
     var type;
     var temp;
@@ -727,6 +759,47 @@ var isEmpty = function (obj) {
 
 
 function getTest(api, partnerCd){
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    let param = {
+        PARTNER_CD : partnerCd,
+        COMPANY_CD : '1000',
+        IMG_URL : url + '/PARTNER_TEMP/',
+    }
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/partnerDetail2"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+
+            console.log("resTest", res);
+
+
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+}
+
+/**
+ * 검색페이지 광고
+ * @param api
+ * @param partnerCd
+ */
+function searchBlurb(api, partnerTp){
     let result;
     let url;
 

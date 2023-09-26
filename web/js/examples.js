@@ -1,11 +1,6 @@
 $(document).ready(function () {
-    $(".header_search").hover(function () {
-        $(this).next().addClass("active");
-    });
 
-    $(".search_box").mouseleave(function () {
-        $(this).removeClass("active");
-    });
+
 
     // 새로운 아이템 추가 함수
     function addItem() {
@@ -65,53 +60,6 @@ $(document).ready(function () {
     // 일정 간격으로 addItem 함수 호출 (예: 3초마다)
     setInterval(pcAddItem, 3000);
 
-    // mainSwiper01
-    var mainSwiper01 = new Swiper(".mainSwiper01", {
-        slidesPerView: 1.2,
-        spaceBetween: 20, // 슬라이드 여백
-        centeredSlides: false, // 슬라이드 중앙정렬
-        slidesOffsetBefore: 20, // 슬라이드 오른쪽 여백
-        slidesOffsetAfter: 20, // 슬라이드 오른쪽 여백
-        loop: false, // 무한반복
-        scrollbar: {
-            el: ".swiper-scrollbar",
-        },
-    });
-
-    // mainSwiper02
-    var mainSwiper02 = new Swiper(".mainSwiper02", {
-        slidesPerView: 2.3,
-        spaceBetween: 20, // 슬라이드 여백
-        centeredSlides: false, // 슬라이드 중앙정렬
-        slidesOffsetBefore: 20, // 슬라이드 오른쪽 여백
-        slidesOffsetAfter: 20, // 슬라이드 오른쪽 여백
-        loop: false, // 무한반복
-    });
-
-    // mainSwiper03
-    var mainSwiper03 = new Swiper(".mainSwiper03", {
-        slidesPerView: 1.2,
-        grid: {
-            rows: 2,
-        },
-        spaceBetween: 20, // 슬라이드 여백
-        centeredSlides: false, // 슬라이드 중앙정렬
-        slidesOffsetBefore: 20, // 슬라이드 오른쪽 여백
-        slidesOffsetAfter: 20, // 슬라이드 오른쪽 여백
-        loop: false, // 무한반복
-    });
-
-    var mainSwiper04 = new Swiper(".mainSwiper04", {
-        slidesPerView: 2.5,
-        grid: {
-            rows: 3,
-        },
-        spaceBetween: 20, // 슬라이드 여백
-        centeredSlides: false, // 슬라이드 중앙정렬
-        slidesOffsetBefore: 20, // 슬라이드 오른쪽 여백
-        slidesOffsetAfter: 20, // 슬라이드 오른쪽 여백
-        loop: false, // 무한반복
-    });
 
     var detail_img_01 = new Swiper(".detail_img_01", {
         spaceBetween: 10,
@@ -158,8 +106,16 @@ $(document).ready(function () {
         spaceBetween: 16, // 슬라이드 여백
         centeredSlides: false, // 슬라이드 중앙정렬
         loop: false, // 무한반복
+        slidesOffsetBefore: 20, // 슬라이드 오른쪽 여백
+        slidesOffsetAfter: 20, // 슬라이드 오른쪽 여백
         autoplay: {
             delay: 2000,
         },
     });
+
+
+
+
+
+
 });

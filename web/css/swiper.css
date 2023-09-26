@@ -92,7 +92,7 @@
 
 .detail_img_01 img {
     border-radius: 8px;
-} 
+}
 
 .detail_img_02 {
     height: 300px;
@@ -140,4 +140,49 @@
     .detail_img_04 {
         height: 540px;
     }
+}
+
+/* 고객센터 */
+.swiper_wrap .mainSwiper02 .swiper-slide {
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.swiper_wrap .mainSwiper02 .swiper-slide img {
+    border-radius: 12px;
+}
+
+@media (min-width: 992px) {
+    .swiper_wrap.pc {
+        margin: 20px 0 0 0;
+    }
+
+    .swiper_wrap.pc .col-5 .col-6:nth-child(1) img {
+        border: 1px solid #ECECEC;
+    }
+
+    .swiper_wrap.pc img {
+        border-radius: 12px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.pc_special_ad .swiper-slide {
+    margin: 0 0 30px 0;
+}
+
+.pc_special_ad .swiper-horizontal>.swiper-pagination-bullets,
+.pc_special_ad .swiper-pagination-bullets.swiper-pagination-horizontal,
+.pc_special_ad .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0;
+}
+
+.pc_special_ad .swiper-pagination-bullet {
+    background: #cccccc;
+}
+
+.pc_special_ad .swiper-pagination-bullet-active {
+    background: #F77B5A;
 }

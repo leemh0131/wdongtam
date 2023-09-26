@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name=”format-detection” content=”no” />
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="title" content="">
+    <meta name="Subject" content="">
+    <meta name="keywords" content="">
+    <meta name="Descript-xion" content="">
+    <meta name="Description" content="">
+
+    <link rel="icon" href="" type="image/x-icon" sizes="16x16">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>우리동네탐정</title>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="header-page"></div>
+
+        <!-- s:모바일 메뉴 -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5>전체메뉴</h5>
+                <ul>
+                    <li>
+                        <a href="#">로그인</a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas_banner">
+                    <img src="img/sample/sample_06.png" alt="">
+                </div>
+                <div class="menu">
+                    <h2>업체가 고민이라면 지금</h2>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_detective.png" alt="">
+                                    </dt>
+                                    <dd>탐정찾기</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_secretary.png" alt="">
+                                    </dt>
+                                    <dd>행정사찾기</dd>
+                                </dl>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <dl>
+                                    <dt>
+                                        <img src="img/icon/i_chat_2.png" alt="">
+                                    </dt>
+                                    <dd>상담의뢰</dd>
+                                </dl>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="notice">
+                    <ul>
+                        <li>공지사항</li>
+                        <li>의뢰상담글을 작성하진 모든분께 스타벅스 아메리카노</li>
+                        <li>
+                            <button type="button">
+                                <img src="img/icon/i_chevron_right_w.png" alt="">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub_wrap">
+            <!-- 탐정 찾기 -->
+            <section class="search_wrap">
+                <div class="container">
+                    <div class="sub_search_box">
+                        <div class="row">
+                            <div class="col-12 col-lg-3">
+                                <div class="input_group">
+                                    <label for="">통합검색</label>
+                                    <input id="keyword-search" type="text" placeholder="검색어를 입력하세요">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                <div class="input_group type2">
+                                    <label for="">지역선택</label>
+                                    <i class="i i_geo"></i>
+                                    <input type="text" placeholder="전체" id="region">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-3">
+                                <div class="input_group type2">
+                                    <label for="">분류선택</label>
+                                    <i class="i i_sliders"></i>
+                                    <input type="text" placeholder="연차수당, 휴일근무" id="selectCategory">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-2">
+                                <button onclick="search()" type="button">검색</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="region_wrap">
+                        <ul>
+                            <li class="active" id="all">
+                                <dl>
+                                    <dt>
+                                        <i class="i i_all"></i>
+                                    </dt>
+                                    <dd>전체</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_seoul"></i>
+                                    </dt>
+                                    <dd>서울</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_gyeonggido"></i>
+                                    </dt>
+                                    <dd>경기</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_incheon"></i>
+                                    </dt>
+                                    <dd>인천</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_daejeon"></i>
+                                    </dt>
+                                    <dd>대전</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_daegu"></i>
+                                    </dt>
+                                    <dd>대구</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_busan"></i>
+                                    </dt>
+                                    <dd>부산</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_gw"></i>
+                                    </dt>
+                                    <dd>광주</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_uisan"></i>
+                                    </dt>
+                                    <dd>울산</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_sejong"></i>
+                                    </dt>
+                                    <dd>세종</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_gangwon"></i>
+                                    </dt>
+                                    <dd>강원</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_chungbuk"></i>
+                                    </dt>
+                                    <dd>충북</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_chungnam"></i>
+                                    </dt>
+                                    <dd>충남</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_jeonbuk"></i>
+                                    </dt>
+                                    <dd>전북</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_jeonnam"></i>
+                                    </dt>
+                                    <dd>전남</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_gyeongbuk"></i>
+                                    </dt>
+                                    <dd>경북</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_gyeongnam"></i>
+                                    </dt>
+                                    <dd>경남</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <i class="i i_jeju"></i>
+                                    </dt>
+                                    <dd>제주</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="select_category_wrap">
+                        <h2>상세분류</h2>
+                        <ul class="category" id="category">
+                            <li>급여,주휴수당</li>
+                            <li>근로계약</li>
+                            <li class="active">연차수당</li>
+                            <li>휴직,복직</li>
+                            <li>급여,주휴수당</li>
+                            <li>근로계약</li>
+                            <li>연차수당</li>
+                            <li>급여,주휴수당</li>
+                            <li>근로계약</li>
+                            <li>연차수당</li>
+                            <li>휴직,복직</li>
+                            <li>급여,주휴수당</li>
+                            <li>근로계약</li>
+                            <li>연차수당</li>
+                            <li>급여,주휴수당</li>
+                            <li>근로계약</li>
+                            <li>연차수당</li>
+                            <li>휴직,복직</li>
+                            <li>급여,주휴수당</li>
+                            <li>근로계약</li>
+                            <li>연차수당</li>
+                            <li>급여,주휴수당</li>
+                            <li>근로계약</li>
+                            <li>연차수당</li>
+                            <li>휴직,복직</li>
+                            <li>급여,주휴수당</li>
+                            <li>근로계약</li>
+                            <li>연차수당</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <div class="content_box">
+                                <ul id="content-item">
+                                    <li>
+                                        <div class="list_item">
+                                            <img src="img/sample/sample_01.png" alt="">
+                                            <div class="list_info">
+                                                <span class="orange">탐정</span>
+                                                <h6>현대탐정사무소</h6>
+                                                <p>의뢰지역 : 전체 ㅣ</p>
+                                                <p><span>여성요원이 있는 행운행정탐정사무소입니다. 서울, 경기지역 가능하며 행정업무, 탐정업무 둘다 가능하니 연락주세요.(여성요원★) 서울, 경기지역 가능하며 행정업무, 탐정업무 둘다 가능하니 연락주세요.(여성요원★)</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 pc">
+                            <div class="detail_side_wrap">
+                                <div class="detail_box">
+                                    <p class="red"><span>의뢰인 TIP</span></p>
+                                    <h6>여러 업체들과 충분한 비교상담을 해보시고<br>업체 선정을 하시길 추천드립니다.</h6>
+                                    <button type="button">무료상담 연결하기</button>
+                                </div>
+                                <div class="detail_box">
+                                    <p class="blue"><span>동일 전문분야 업체</span></p>
+                                    <ul>
+                                        <li>
+                                            <div class="detail_side_box">
+                                                <img src="img/sample/sample_01.png" alt="">
+                                                <h4>(주)갓생솔루션</h4>
+                                                <p>편하게 연락주시면 친절한 상담 도와드리겠습니다.</p>
+                                                <button type="button">상세보기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="detail_side_box">
+                                                <img src="img/sample/sample_01.png" alt="">
+                                                <h4>(주)갓생솔루션</h4>
+                                                <p>편하게 연락주시면 친절한 상담 도와드리겠습니다.</p>
+                                                <button type="button">상세보기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="detail_side_box">
+                                                <img src="img/sample/sample_01.png" alt="">
+                                                <h4>(주)갓생솔루션</h4>
+                                                <p>편하게 연락주시면 친절한 상담 도와드리겠습니다.</p>
+                                                <button type="button">상세보기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ad_wrap">
+                <div class="item_area">
+                    <h4>스페셜 광고</h4>
+                    <div class="swiper_area mo">
+                        <div class="swiper special_ad">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special_wrap pc">
+                        <div class="swiper pc_special_ad">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="special_box">
+                                        <img src="img/sample/sample_01.png" alt="">
+                                        <div class="special_box_info">
+                                            <h1>(주)갓생솔루션</h1>
+                                            <p>무료상담 : 010-2571-3457</p>
+                                            <button type="button">상세보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+
+        <div class="footer-page"></div>
+
+        <div class="fixed_menu mo">
+            <div class="fixed_wrap">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_map.png" alt="">
+                                </dt>
+                                <dd>지역별</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_sliders.png" alt="">
+                                </dt>
+                                <dd>분야별</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_chat.png" alt="">
+                                </dt>
+                                <dd>상담의뢰</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_call_center.png" alt="">
+                                </dt>
+                                <dd>고객센터</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <dl>
+                                <dt>
+                                    <img src="img/icon/i_person.png" alt="">
+                                </dt>
+                                <dd>MY</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="lib/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/examples.js"></script>
+    <script src="js/partnerCommon.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".header-page").load("/header.html");
+            $(".footer-page").load("/footer.html");
+
+            const url = new URL(window.location.href);
+            // URLSearchParams 객체
+            const urlParams = url.searchParams;
+            let keyword = nvl(urlParams.get('keyword'));
+            let region = nvl(urlParams.get('region'));
+            let partnerTp = nvl(urlParams.get('partnerTp'));
+
+            if(keyword != ''){
+                $('#keyword-search').val(keyword);
+            }
+
+            // 지역선택
+            $("#region").click(function () {
+                $(".region_wrap").toggle();
+
+                let item = nvl($("#region").attr("item"));
+
+                //전체 클릭
+                let regionList = $(".region_wrap ul li dd");
+                if(item == ''){
+                    $(".region_wrap ul li dd")[0].click();
+                } else {
+                    item = item.split("|");
+                    //$(".region_wrap ul li").removeClass();
+                    for(let i = 0; i < regionList.length; i++){
+                        for(let j = 0;j < item.length; j++){
+                            if(regionList[i].innerText == item && $($(".region_wrap ul li")[2]).attr('class') != 'active'){
+                                $(".region_wrap ul li dd")[i].click();
+                            }
+                        }
+                    }
+                }
+
+            });
+
+            $(".region_wrap ul li").click(function () {
+
+                let item = $(this).find('dd').text();
+                $(this).toggleClass("active");
+                if(item == '전체'){
+                    $(".region_wrap ul li").removeClass();
+                    $(this).toggleClass("active");
+                    $("#region").attr("placeholder", "전체");
+                    $("#region").attr("item", "");
+                } else {
+                    $("#all").removeClass();
+                    if(nvl($("#region").attr("placeholder")) == '전체'){
+                        $("#region").attr("placeholder", '');
+                        $("#region").attr("item", "");
+                    }
+
+                    if($(this).attr('class') == 'active'){
+                        let regionItem = nvl($("#region").attr("item")) + item + "|";
+                        $("#region").attr("item", regionItem);
+                    } else {
+                        let regionItem = nvl($("#region").attr("item")).replaceAll(item+"|", "");
+                        $("#region").attr("item", regionItem);
+                    }
+
+                    let itemText = nvl($("#region").attr("item"));
+
+                    if(itemText != ''){
+                        itemText = itemText.replace(/\|$/, '');
+                        itemText = itemText.replaceAll("|", ", ");
+                        $("#region").attr("placeholder", itemText);
+                    } else {
+                        $("#all").toggleClass("active");
+                        $("#region").attr("placeholder", "전체");
+                        $("#region").attr("item", "");
+                    }
+
+                }
+                console.log($("#region").attr("item"));
+            })
+
+            // 분류선택
+            $("#selectCategory").click(function () {
+                $(".select_category_wrap").toggle();
+            });
+
+            $(".category li").click(function () {
+                $(this).toggleClass("active");
+            });
+
+            if(region != ''){
+                $("#region").attr("item", region);
+                $("#region").click();
+            }
+
+            search();
+
+            searchBlurb('local', partnerTp);
+
+        });
+
+        //검색버튼 클릭
+        function search(){
+
+            $('#content-item').empty() // 자식요소 제거
+
+            const url = new URL(window.location.href);
+            // URLSearchParams 객체
+            const urlParams = url.searchParams;
+            let keyword = $('#keyword-search').val();
+            let region = $("#region").attr("item");
+            let partnerTp = nvl(urlParams.get('partnerTp'));
+
+            let param = {
+                COMPANY_CD : "1000",
+                KEYWORD : nvl(keyword),
+                REGION : nvl(region),
+                PARTNER_TP : nvl(partnerTp),
+            }
+
+            let list = getPartnerSearch('local', param);
+
+            if(nvl(list.map.list) != ''){
+
+                list = list.map.list;
+                for(let i = 0; i < list.length; i++){
+                    let color = list[i].PARTNER_TP == "탐정" ? 'orange' : 'blue';
+                    $('#content-item').append(
+                        `<li>`
+                            + `<div class="list_item">`
+                                + `<img onclick="blurbDetailPage(this)"  id="` + list[i].PARTNER_CD + `"  onError="this.src='img/sample/sample_01.png'" src="` + list[i].IMG_URL + `" alt="">`
+                                    + `<div class="list_info">`
+                                        + `<span class="` + color + `">` + list[i].PARTNER_TP + `</span>`
+                                        + `<h6>` + list[i].PARTNER_NM + `</h6>`
+                                        + `<p>` + list[i].JOB_ZONE + `</p>`
+                                        + `<p><span>` + list[i].COMPANY_INTRO + `</span></p>`
+                                        + `</p>`
+                                    + `</div>`
+                            + `</div>`
+                        + `</li>`
+                    );
+                }
+
+            } else {
+                alert("조회된 리스트가 없습니다.");
+            }
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<header id="header" class="header">
+    <!-- mobile header -->
+    <div class="header_wrap mo">
+        <div class="header_top">
+            <a href="index.html">
+                <img src="img/logo.png" alt="">
+            </a>
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight">
+                <i class="i i_menu"></i>
+            </button>
+        </div>
+        <div class="header_bottom">
+            <div class="header_input">
+                <input type="text" id="keyword-mo" placeholder="탐정과 행정사를 한번에 검색해보세요!">
+                <button type="button" onclick="header_search()">
+                    <i class="i i_search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- pc header -->
+    <div class="header_wrap pc">
+        <div class="header_top">
+            <div class="container">
+                <div class="header_l">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <div class="header_input">
+                        <input type="text" onkeyup="handleKeyUp(event)" id="keyword-pc" placeholder="탐정과 행정사를 한번에 검색해보세요!">
+                        <button type="button" onclick="header_search()">
+                            <i class="i i_search"></i>
+                        </button>
+                    </div>
+                    <div class="search_group">
+                        <button type="button" class="header_search">상세검색</button>
+                        <div class="search_box">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h2>지역별<button type="button" class="btn_right"></button></h2>
+                                    <ul>
+                                        <li>
+                                            <a href="#">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">서울</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">경기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">인천</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">대전</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">대구</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">부산</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">광주</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">울산</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">세종</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">강원</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">충북</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">충남</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">전북</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">전남</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">경북</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">경남</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">제주</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-4">
+                                    <h2>분류별<button type="button" class="btn_right"></button></h2>
+                                    <ul>
+                                        <li>
+                                            <a href="#">탐정</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">행정사</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="header_r">
+                    <a href="#"><b>업체광고문의</b>는 여기서 의뢰하세요</a>
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="container">
+                <div class="header_l">
+                    <ul>
+                        <li>
+                            <a href="/search.html?partnerTp=탐정">탐정찾기</a>
+                        </li>
+                        <li>
+                            <a href="/search.html?partnerTp=행정사">행정사찾기</a>
+                        </li>
+                        <li>
+                            <a href="/consulting.html">상담의뢰하기</a>
+                        </li>
+                        <li>
+                            <a href="/consulting.html">커뮤니티</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header_r">
+                    <ul>
+                        <!--<li>
+                            <a href="#">로그인</a>
+                        </li>-->
+                        <li>
+                            <a href="/customer_service.html">고객센터</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<script src="lib/jquery.min.js"></script>
+<script src="lib/bootstrap.bundle.min.js"></script>
+<script src="lib/swiper-bundle.min.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/examples.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $(".header_search").hover(function () {
+            $(this).next().addClass("active");
+        });
+
+        $(".search_box").mouseleave(function () {
+            $(this).removeClass("active");
+        });
+
+        $(".search_box li a").click(function() {
+            header_search(this.text);
+        });
+
+    });
+
+    function header_search(item){
+
+        var keyword = '';
+
+        if($('.pc').css('display') == 'block'){
+            keyword = $('#keyword-pc').val();
+        } else {
+            keyword = $('#keyword-mo').val();
+        }
+
+        var url = "search.html?";
+
+
+        if(nvl(keyword) != ''){
+            url += "keyword=" + keyword;
+        }
+
+        if(nvl(item) != ''){
+
+            let separator = nvl(keyword) == '' ? '' : '&';
+
+            if(item == "행정사" || item == "탐정"){
+                item = encodeURIComponent(item);
+                url += separator + "partnerTp=" + item;
+            } else {
+                item = encodeURIComponent(item);
+                url += separator + "region=" + item;
+            }
+
+        }
+
+        window.location.href = url;
+
+    }
+
+    function handleKeyUp(event) {
+        if (event.key === 'Enter') {
+            header_search();
+        }
+    }
+
+</script>
+
