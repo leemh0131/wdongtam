@@ -1983,3 +1983,9 @@ section {
         margin: 0;
     }
 }
+
+.modal-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}

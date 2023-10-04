@@ -1,3 +1,5 @@
+
+
 <header id="header" class="header">
     <!-- mobile header -->
     <div class="header_wrap mo">
@@ -154,7 +156,7 @@
         <div class="modal-dialog" style="width:850px;">
             <div class="modal-content" >
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">광고문의</h5>
+                    <h5 class="modal-title" id="myModalLabel">광고문의<span style="color: red;font-size:14px;"> * 아이콘을 클릭하면 오픈방으로 이동합니다.</span></h5>
                 </div>
                 <div class="modal-body">
                     <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-4" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-togglebutton="false">
@@ -174,7 +176,7 @@
 
 </header>
 
-<link rel="stylesheet" href="lib/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
 <script src="lib/jquery.min.js"></script>
 <script src="lib/bootstrap.bundle.min.js"></script>
 <script src="lib/bootstrap.js"></script>
@@ -198,10 +200,23 @@
             header_search(this.text);
         });
 
-        let info = getCompanyInfo('local');
-        //let info = getCompanyInfo('prod');
+        //let info = getCompanyInfo('local');
+        let info = getCompanyInfo('prod');
 
-        console.log("company : ", info);
+        $('.widget-body').append(`<a href="` +  nvl(info.map.KAKAO2, '#') + `"><img class="modal-img" src="img/icon/kakao.jpg" alt=""></a>`);
+        $('.widget-body').append(`<span>` + nvl(info.map.KAKAO, '미등록') + `</span>`);
+        $('.widget-body').append(`<br>`);
+        $('.widget-body').append(`<hr>`);
+        $('.widget-body').append(`<a href="` +  nvl(info.map.TELEGRAM2, '#') + `"><img class="modal-img" src="img/icon/telegram.jpg" alt=""></a>`);
+        $('.widget-body').append(`<span>` + nvl(info.map.TELEGRAM, '미등록') + `</span>`);
+        $('.widget-body').append(`<br>`);
+        $('.widget-body').append(`<hr>`);
+        $('.widget-body').append(`<a href="tel:` +  nvl(info.map.TEL_NO, '#') + `"><img class="modal-img" src="img/icon/phone-call-icon.png" alt=""></a>`);
+        $('.widget-body').append(`<span>` + nvl(info.map.TEL_NO, '미등록') + `</span>`);
+        $('.widget-body').append(`<br>`);
+        $('.widget-body').append(`<hr>`);
+        $('.widget-body').append(`<img class="modal-img" src="img/icon/email.png" alt="">`);
+        $('.widget-body').append(`<span>` + nvl(info.map.EMAIL, '미등록') + `</span>`);
 
     });
 
