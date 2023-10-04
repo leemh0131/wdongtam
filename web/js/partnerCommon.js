@@ -83,7 +83,7 @@ function getPartnerMainList(api){
                                 <p>` + res.vvvipMainYouTube[0].company_intro + `</p>
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="">
                                             <img src="img/icon/i_call.png" alt="">
                                             ` + res.vvvipMainYouTube[0].tel_no + `
                                         </a>
@@ -111,7 +111,7 @@ function getPartnerMainList(api){
                                 <p>` + res.vvvipMainYouTube[0].company_intro + `</p>
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a onclick="callClick(` + ' + res.vvvipMainYouTube[0].partner_cd + ' + `)" href="tel:` + res.vvvipMainYouTube[0].tel_no + `">
                                             <img src="img/icon/i_call.png" alt="">
                                                 ` + res.vvvipMainYouTube[0].tel_no + `
                                         </a>
@@ -146,7 +146,7 @@ function getPartnerMainList(api){
                             <p>company_intro</p>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="">
                                     <img src="img/icon/i_call.png" alt="">
                                     tel_no
                                     </a>
@@ -172,7 +172,7 @@ function getPartnerMainList(api){
                             <p>company_intro</p>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a onclick="callClick('partner_cd')" href="a_no">
                                         <img src="img/icon/i_call.png" alt="">
                                         tel_no
                                     </a>
@@ -188,11 +188,12 @@ function getPartnerMainList(api){
 
                 for(let i = 0; i < vvvipMain.length; i++){
                     let html = col3Content;
-                    html = html.replace('img_url', vvvipMain[i].img_url);
-                    html = html.replace('partner_nm', vvvipMain[i].partner_nm);
-                    html = html.replace('partner_cd', vvvipMain[i].partner_cd);
-                    html = html.replace('company_intro', vvvipMain[i].company_intro);
-                    html = html.replace('tel_no', vvvipMain[i].tel_no);
+                    html = html.replace('img_url', nvl(vvvipMain[i].img_url));
+                    html = html.replace('partner_nm', nvl(vvvipMain[i].partner_nm));
+                    html = html.replace('partner_cd', nvl(vvvipMain[i].partner_cd));
+                    html = html.replace('company_intro', nvl(vvvipMain[i].company_intro));
+                    html = html.replace('a_no', 'tel:' + nvl(vvvipMain[i].tel_no));
+                    html = html.replace('tel_no', nvl(vvvipMain[i].tel_no));
                     $("main.pc section.section_01 div.row").append(html);
 
                     let moHtml = moContent;
@@ -219,7 +220,7 @@ function getPartnerMainList(api){
                                 <p>company_intro</p>
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="">
                                             <img src="img/icon/i_call.png" alt="">
                                             tel_no
                                         </a>
@@ -243,7 +244,7 @@ function getPartnerMainList(api){
                             <p>company_intro</p>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a onclick="callClick('partner_cd')" href="a_no">
                                         <img src="img/icon/i_call.png" alt="">
                                         tel_no
                                     </a>
@@ -261,20 +262,21 @@ function getPartnerMainList(api){
 
                     let html = col4Content;
 
-                    html = html.replace('img_url', vvipBox[i].img_url);
-                    html = html.replace('partner_nm', vvipBox[i].partner_nm);
-                    html = html.replace('partner_cd', vvipBox[i].partner_cd);
-                    html = html.replace('company_intro', vvipBox[i].company_intro);
-                    html = html.replace('tel_no', vvipBox[i].tel_no);
+                    html = html.replace('img_url', nvl(vvipBox[i].img_url));
+                    html = html.replace('partner_nm', nvl(vvipBox[i].partner_nm));
+                    html = html.replace('partner_cd', nvl(vvipBox[i].partner_cd));
+                    html = html.replace('company_intro', nvl(vvipBox[i].company_intro));
+                    html = html.replace('tel_no', nvl(vvipBox[i].tel_no));
                     $("main.pc section.section_03 div.row").append(html);
 
                     let moHtml = moContent;
 
-                    moHtml = moHtml.replace('img_url', vvipBox[i].img_url);
-                    moHtml = moHtml.replace('partner_nm', vvipBox[i].partner_nm);
-                    moHtml = moHtml.replace('partner_cd', vvipBox[i].partner_cd);
-                    moHtml = moHtml.replace('company_intro', vvipBox[i].company_intro);
-                    moHtml = moHtml.replace('tel_no', vvipBox[i].tel_no);
+                    moHtml = moHtml.replace('img_url', nvl(vvipBox[i].img_url));
+                    moHtml = moHtml.replace('partner_nm', nvl(vvipBox[i].partner_nm));
+                    moHtml = moHtml.replace('partner_cd', nvl(vvipBox[i].partner_cd));
+                    moHtml = moHtml.replace('company_intro', nvl(vvipBox[i].company_intro));
+                    moHtml = moHtml.replace('tel_no', nvl(vvipBox[i].tel_no));
+                    moHtml = moHtml.replace('a_no', 'tel:' + nvl(vvipBox[i].tel_no));
                     $("main.mo section.section_04").find(".swiper-wrapper").append(moHtml);
 
                 }
@@ -322,16 +324,16 @@ function getPartnerMainList(api){
                 for(let i = 0; i < vipBox.length; i++){
 
                     let html = vipCol3Content;
-                    html = html.replace('partner_nm', vipBox[i].partner_nm);
-                    html = html.replace('partner_cd', vipBox[i].partner_cd);
-                    html = html.replace('company_intro', vipBox[i].company_intro);
-                    html = html.replace('tel_no', vipBox[i].tel_no);
+                    html = html.replace('partner_nm', nvl(vipBox[i].partner_nm));
+                    html = html.replace('partner_cd', nvl(vipBox[i].partner_cd));
+                    html = html.replace('company_intro', nvl(vipBox[i].company_intro));
+                    html = html.replace('tel_no', nvl(vipBox[i].tel_no));
                     $("main.pc section.section_04 div.row").append(html);
 
                     let moHtml = moContent;
-                    moHtml = moHtml.replace('partner_nm', vipBox[i].partner_nm);
-                    moHtml = moHtml.replace('partner_cd', vipBox[i].partner_cd);
-                    moHtml = moHtml.replace('company_intro', vipBox[i].company_intro);
+                    moHtml = moHtml.replace('partner_nm', nvl(vipBox[i].partner_nm));
+                    moHtml = moHtml.replace('partner_cd', nvl(vipBox[i].partner_cd));
+                    moHtml = moHtml.replace('company_intro', nvl(vipBox[i].company_intro));
                     $("main.mo section.section_05").find(".swiper-wrapper").append(moHtml);
 
                 }
@@ -520,7 +522,7 @@ function getPartnerDetail(api, partnerCd){
             let partnerInfoHtml =   `<dt>무료상담</dt>` +
                                     `<dd>` + nvl(partnerInfo.TEL_NO, '정보없음') + `</dd>` +
                                     `<dt>홈페이지</dt>` +
-                                    `<dd className="td_unline"><a target='_blank' href="` + nvl(partnerInfo.HOME_PAGE, '#') + `">` + nvl(partnerInfo.HOME_PAGE, '정보없음') + `</a></dd>` +
+                                    `<dd class="td_unline"><a target='_blank' href="` + nvl(partnerInfo.HOME_PAGE, '#') + `">` + nvl(partnerInfo.HOME_PAGE, '정보없음') + `</a></dd>` +
                                     `<dt>카카오톡</dt>` +
                                     `<dd>` + nvl(partnerInfo.KAKAOTALK, '정보없음') + `</dd>` +
                                     `<dt>텔레그램</dt>` +
@@ -880,3 +882,27 @@ function getCompanyInfo(api){
     return result;
 
 }
+
+function callClick(partenr_cd){
+
+    var url = prodApiUrl;
+
+    let param = {
+        COMPANY_CD : '1000',
+        PARTENR_CD : partenr_cd,
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/callClick"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+        },
+        error: function (x, o, e) {
+        }
+    });
+
+}
+
