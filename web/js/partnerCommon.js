@@ -576,7 +576,7 @@ function getPartnerDetail(api, partnerCd){
 
 
             //업체소개
-            $('#partner-intro p').text(nvl(partnerInfo.COMPANY_INTRO));
+            $('#partner-intro p').html(nvl(partnerInfo.COMPANY_INTRO_HTML));
 
             //업무가능지역 - 자사보유
             $('#job-zone div.row').append(jobZoneSubHtml);
