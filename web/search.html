@@ -117,7 +117,7 @@
                                 <div class="input_group type2">
                                     <label for="">분류선택</label>
                                     <i class="i i_sliders"></i>
-                                    <input type="text" placeholder="연차수당, 휴일근무" id="selectCategory">
+                                    <input type="text" placeholder="" id="selectCategory">
                                 </div>
                             </div>
                             <div class="col-12 col-lg-2">
@@ -488,14 +488,7 @@
                 console.log($("#region").attr("item"));
             })
 
-            // 분류선택
-            $("#selectCategory").click(function () {
-                $(".select_category_wrap").toggle();
-            });
 
-            $(".category li").click(function () {
-                $(this).toggleClass("active");
-            });
 
             if(region != ''){
                 $("#region").attr("item", region);
@@ -509,6 +502,36 @@
             for(let i = 0; i < category.list.length; i++){
                 $('#category').append('<li>' + category.list[i].CATEGORY_NM + '</li>');
             }
+
+            // 분류선택
+            $("#selectCategory").click(function () {
+                $(".select_category_wrap").toggle();
+            });
+
+            $(".category li").click(function () {
+                $(this).toggleClass("active");
+
+                let item = $(this).text();
+
+                if($(this).attr('class') == 'active'){
+                    let selectCategoryItem = nvl($("#selectCategory").attr("item")) + item + "|";
+                    $("#selectCategory").attr("item", selectCategoryItem);
+                } else {
+                    let selectCategoryItem = nvl($("#selectCategory").attr("item")).replaceAll(item+"|", "");
+                    $("#selectCategory").attr("item", selectCategoryItem);
+                }
+
+                let itemText = nvl($("#selectCategory").attr("item"));
+
+                if(itemText != ''){
+                    itemText = itemText.replace(/\|$/, '');
+                    itemText = itemText.replaceAll("|", ", ");
+                    $("#selectCategory").attr("placeholder", itemText);
+                } else {
+                    $("#selectCategory").attr("placeholder", '');
+                }
+
+            });
 
             search();
 
@@ -581,12 +604,14 @@
             const urlParams = url.searchParams;
             let keyword = $('#keyword-search').val();
             let region = $("#region").attr("item");
+            let selectCategory = $("#selectCategory").attr("item");
             let partnerTp = nvl(urlParams.get('partnerTp'));
 
             let param = {
                 COMPANY_CD : "1000",
                 KEYWORD : nvl(keyword),
                 REGION : nvl(region),
+                SELECTCATEGORY : nvl(selectCategory),
                 PARTNER_TP : nvl(partnerTp),
             }
 
