@@ -278,34 +278,7 @@
                     <div class="select_category_wrap">
                         <h2>상세분류</h2>
                         <ul class="category" id="category">
-                            <li>급여,주휴수당</li>
-                            <li>근로계약</li>
-                            <li class="active">연차수당</li>
-                            <li>휴직,복직</li>
-                            <li>급여,주휴수당</li>
-                            <li>근로계약</li>
-                            <li>연차수당</li>
-                            <li>급여,주휴수당</li>
-                            <li>근로계약</li>
-                            <li>연차수당</li>
-                            <li>휴직,복직</li>
-                            <li>급여,주휴수당</li>
-                            <li>근로계약</li>
-                            <li>연차수당</li>
-                            <li>급여,주휴수당</li>
-                            <li>근로계약</li>
-                            <li>연차수당</li>
-                            <li>휴직,복직</li>
-                            <li>급여,주휴수당</li>
-                            <li>근로계약</li>
-                            <li>연차수당</li>
-                            <li>급여,주휴수당</li>
-                            <li>근로계약</li>
-                            <li>연차수당</li>
-                            <li>휴직,복직</li>
-                            <li>급여,주휴수당</li>
-                            <li>근로계약</li>
-                            <li>연차수당</li>
+
                         </ul>
                     </div>
                 </div>
@@ -527,6 +500,14 @@
             if(region != ''){
                 $("#region").attr("item", region);
                 $("#region").click();
+            }
+
+            let category = getCategory('prod').map;
+
+            //<li>카테고리</li>
+            //<li class='active'>카테고리</li>
+            for(let i = 0; i < category.list.length; i++){
+                $('#category').append('<li>' + category.list[i].CATEGORY_NM + '</li>');
             }
 
             search();
