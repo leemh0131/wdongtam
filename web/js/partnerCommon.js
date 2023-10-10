@@ -802,47 +802,6 @@ function getTest(api, partnerCd){
 
 }
 
-/**
- * 검색페이지 광고
- * @param api
- * @param partnerCd
- */
-function searchBlurb(api, partnerTp){
-    let result;
-    let url;
-
-    if(api == 'local'){
-        url = localApiUrl;
-    } else if(api == 'dev'){
-        url = devApiUrl;
-    } else if(api == 'prod'){
-        url = prodApiUrl;
-    }
-
-    let param = {
-        PARTNER_CD : partnerCd,
-        COMPANY_CD : '1000',
-        IMG_URL : url + '/PARTNER_TEMP/',
-    }
-    $.ajax({
-        type: "POST",
-        url: [url + "/api/web/v1/partnerDetail2"],
-        contentType: "application/json; charset=UTF-8",
-        async : false,
-        data: JSON.stringify(param),
-        success: function (res) {
-
-            console.log("resTest", res);
-
-
-        },
-        error: function (x, o, e) {
-            result = {x : x, o : o, e : e};
-        }
-    });
-
-}
-
 
 /**
  * @param api
@@ -905,4 +864,50 @@ function callClick(partenr_cd){
     });
 
 }
+
+function getSearchPageBlurb(partnerTp, api){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    if(partnerTp == '탐정'){
+        partnerTp = '01';
+    } else if(partnerTp == '행정사'){
+        partnerTp = '02';
+    } else {
+        partnerTp = '';
+    }
+
+    let param = {
+        COMPANY_CD : '1000',
+        PARTNER_TP : partnerTp,
+        IMG_URL : url + '/PARTNER_TEMP/'
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getSearchPageBlurb"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
 
