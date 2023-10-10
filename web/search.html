@@ -538,7 +538,7 @@
         //찾기페이지 스페셜 및 세로광고
         function searchBlurb(partnerTp){
 
-            let result = getSearchPageBlurb(partnerTp, 'local');
+            let result = getSearchPageBlurb(partnerTp, 'prod');
 
             $(".blurb-side").empty();
             $("#blurb-special-pc").empty();
@@ -584,7 +584,6 @@
                         $("#blurb-special-mo").append(pcSpecialHtml);
                     }
 
-                    console.log("test", result);
                 }
 
             }
