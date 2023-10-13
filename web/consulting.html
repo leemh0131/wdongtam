@@ -198,7 +198,7 @@
                             <div class="col-12">
                                 <div class="con_top">
                                     <h3>관련 무료 글상담</h3>
-                                    <button type="button">무료 글상담 작성하기</button>
+                                    <button onclick="freeWrite()" type="button">무료 글상담 작성하기</button>
                                 </div>  
                             </div>
                             <div class="col-12 col-lg-8">
@@ -723,6 +723,11 @@
                 $(".category").animate({scrollLeft: "+=100px"}, "slow");
             });
         });
+
+        function freeWrite(){
+            window.location.href = 'write.html';
+        }
+
     </script>
 
 </body>

@@ -493,7 +493,6 @@ textarea {
         top: 50px;
         left: 10px;
         width: 280px;
-        z-index: 1;
     }
 
     .search_box.active {

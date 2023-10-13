@@ -226,7 +226,9 @@
                                             <li><img src="img/icon/i_star_g.svg" alt=""></li>
                                         </ul>
                                         <span>4.9 l <b>1000개의 평가</b></span>
-                                        <p>실제 업체를 이용한 이용자들이 남긴 후기입니다.</p>
+                                        <p>실제 업체를 이용한 이용자들이 남긴 후기입니다.
+                                            <button type="button" class="open_modal" data-modal-id="reviewWrite">후기 작성하기</button>
+                                        </p>
                                     </div>
                                     <div class="review_body">
                                         <ul>
@@ -439,6 +441,58 @@
         </div> -->
     </div>
 
+    <div id="reviewWrite" class="modal_wrap">
+        <div class="modal_content">
+            <div class="modal_header">
+                <h3 class="modal_title">후기작성</h3>
+                <button class="close"></button>
+            </div>
+            <div class="modal_body">
+                <div class="modal_review_box">
+                    <h2>평점을 선택해주세요!</h2>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5"></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4"></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3"></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2"></label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1"></label>
+                    </div>
+                </div>
+                <div class="input_wrap">
+                    <!--<div class="custom_select">
+                        <span class="selected_option">분류</span>
+                        <ul class="options">
+                            <li data-value="option1">옵션 1</li>
+                            <li data-value="option2">옵션 2</li>
+                            <li data-value="option3">옵션 3</li>
+                        </ul>
+                    </div>-->
+                    <div class="input_group">
+                        <input type="text" placeholder="제목">
+                    </div>
+                    <div class="input_group">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                    </div>
+                    <!--<div class="input_group file_group">
+                        <input type="text" id="fileNameInput">
+                        <input type="file" id="fileInput">
+                        <button type="button" id="fileButton">파일 선택</button>
+                    </div>-->
+                </div>
+            </div>
+            <div class="modal_footer">
+                <div class="btn_group">
+                    <button type="button" class="btn_check">확인</button>
+                    <button type="button" class="btn_close close">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="lib/jquery.min.js"></script>
     <script src="lib/bootstrap.bundle.min.js"></script>

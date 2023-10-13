@@ -947,3 +947,40 @@ function getCategory(api){
 }
 
 
+function getCustomerService(api){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    let param = {
+        COMPANY_CD : '1000',
+        IMG_URL : url + '/PARTNER_TEMP/'
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getCustomerService"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
+

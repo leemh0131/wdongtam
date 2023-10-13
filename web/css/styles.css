@@ -18,6 +18,8 @@
  * 03) Customer_service
  * 04) Search
  * 05) Consulting
+ * 06) Write
+ * 07) Ad
  */
 
 /* **************************************** *
@@ -952,12 +954,27 @@ section {
 }
 
 .review_top p {
+    align-items: center;
     color: #666;
+    display: flex;
     font-size: 12px;
     font-weight: 400;
+    justify-content: space-between;
     line-height: 18px;
     margin: 4px 0 0 0;
     width: 100%;
+}
+
+.review_top p button {
+    background: #000;
+    border: 0;
+    border-radius: 4px;
+    color: #FFF;
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    padding: 4px 12px;
 }
 
 .review_body {
@@ -1629,11 +1646,11 @@ section {
     }
 
     .list_info span.orange {
-        max-width: 57px;
+        max-width: 54px;
     }
 
     .list_info span.blue {
-        max-width: 67px;
+        max-width: 64px;
     }
 
     .list_info h6 {
@@ -1644,33 +1661,29 @@ section {
         align-items: center;
         display: flex;
         margin: auto 0 0 0;
-        white-space: nowrap; /* 텍스트를 한 줄로 유지합니다. */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 100%;
     }
 
     .list_info p span {
         display: inline-block;
         overflow: hidden;
         margin: 0 0 0 4px;
-        white-space: nowrap; /* 텍스트를 한 줄로 유지합니다. */
         text-overflow: ellipsis;
-        width: 100%;
+        width: calc(100% - 77%);
+        white-space: nowrap;
     }
 }
 
-/*@media (min-width: 1380px) {
+@media (min-width: 1380px) {
     .list_info p span {
         width: calc(100% - 76%);
     }
-}*/
+}
 
-/*@media (min-width: 1400px) {
+@media (min-width: 1400px) {
     .list_info p span {
         width: calc(100% - 62%);
     }
-}*/
+}
 
 /* **************************************** *
  * consulting
@@ -1984,8 +1997,479 @@ section {
     }
 }
 
-.modal-img {
-    width: 50px;
-    height: 50px;
-    margin-right: 5px;
+/* 모달 */
+.modal_wrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal_content {
+    background-color: #fff;
+    border-radius: 20px;
+    max-width: 90%;
+    /* 모달의 최대 너비 조절 */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    /* 내부 컨텐츠를 중앙 정렬하기 위해 필요 */
+}
+
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+}
+
+.modal_title {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal_header .close {
+    background: url(../img/icon/x-lg.svg);
+    border: 0;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+
+.modal_footer {
+    margin: 28px 0 0 0;
+}
+
+.modal_footer .btn_group {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.modal_footer button {
+    border: 0;
+    border-radius: 8px;
+    font-size: 14px;
+    height: 40px;
+    width: 100px;
+}
+
+.modal_footer .btn_check {
+    background: #F8350A;
+    color: #fff;
+}
+
+.modal_footer .btn_close {
+    background: #676767;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .modal_content {
+        max-width: 90%;
+        max-height: 100%;
+        padding: 16px;
+    }
+
+    .modal_header {
+        margin: 0 0 16px 0;
+    }
+
+    .modal_title {
+        font-size: 16px;
+    }
+
+    .modal_header .close {
+        background-size: cover;
+        height: 16px;
+        width: 16px;
+    }
+
+    .modal_footer {
+        margin: 20px 0 0 0;
+    }
+
+    .modal_footer .btn_group {
+        gap: 8px;
+    }
+
+    .modal_footer button {
+        font-size: 14px;
+        height: 32px;
+        width: 80px;
+    }
+
+}
+
+#reviewWrite .modal_content {
+    width: 600px;
+}
+
+.modal_review_box {
+    background: #f1f1f1;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 20px 0;
+    padding: 40px 0 60px 0;
+}
+
+.modal_review_box h2 {
+    color: #333;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+}
+
+@media (max-width: 768px) {
+    #reviewWrite .modal_content {
+        width: 90%;
+    }
+
+    .modal_review_box h2 {
+        font-size: 18px;
+    }
+}
+
+/* 별점 스타일 */
+.rating {
+    display: flex;
+    direction: rtl;
+    gap: 32px;
+    justify-content: center;
+    unicode-bidi: bidi-override;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.rating>label::before {
+    background: url(../img/icon/heart.svg);
+    content: "";
+    height: 24px;
+    position: absolute;
+    width: 24px;
+}
+
+.rating>label:hover::before,
+.rating>label:hover~label::before,
+.rating>input:checked~label::before {
+    background: url(../img/icon/heart_fill.svg);
+}
+
+.input_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 커스텀 select box */
+.custom_select {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.selected_option {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    height: 40px;
+    padding: 0 12px;
+}
+
+.options {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    position: absolute;
+    transition: opacity 0.3s, height 0.3s;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 3;
+}
+
+.options.open {
+    display: block;
+    /* open 클래스가 적용된 경우에만 display를 block으로 변경 */
+    height: auto;
+    opacity: 1;
+    /* open 클래스가 적용된 경우 투명도를 1로 설정하여 나타나게 함 */
+}
+
+.options li {
+    align-items: center;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    height: 40px;
+    padding: 0 12px;
+}
+
+.options li:hover {
+    background: #f5f5f5;
+}
+
+.options li:first-child:hover {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.options li:last-child:hover {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* input */
+.input_group input[type=file] {
+    display: none;
+}
+
+.input_group textarea {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #CCC;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    height: 100px;
+    padding: 12px;
+}
+
+.input_group textarea:focus {
+    outline: none;
+}
+
+.input_group input {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #CCC;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+}
+
+.input_group input::placeholder {
+    color: #666;
+}
+
+.file_group {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.file_group input {
+    color: #666;
+    width: 100%;
+}
+
+.file_group button {
+    background: #000;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    flex: 0 0 auto;
+    height: 40px;
+    width: 100px;
+}
+
+@media (max-width: 768px) {
+    .file_group button {
+        height: 40px;
+        width: 80px;
+    }
+}
+
+/* **************************************** *
+ * Write
+ * **************************************** */
+.write_wrap {
+    background: #FAFAFA;
+    padding: 60px 0;
+}
+
+.write_wrap .con_body {
+    margin: 20px 0 0 0;
+}
+
+.write_wrap .con_fot {
+    margin: 28px 0 0 0;
+}
+
+.write_wrap .btn_group {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.write_wrap button {
+    border: 0;
+    border-radius: 8px;
+    font-size: 14px;
+    height: 40px;
+    width: 100px;
+}
+
+.write_wrap .btn_check {
+    background: #F8350A;
+    color: #fff;
+}
+
+.write_wrap .btn_close {
+    background: #676767;
+    color: #fff;
+}
+
+/* **************************************** *
+ * Ad
+ * **************************************** */
+.ad_inquiry_wrap {
+    padding: 80px 0;
+}
+
+.ad_inquiry_wrap .container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.ad_inquiry_wrap .container .row {
+    align-items: center;
+    width: 100%;
+}
+
+.ad_inquiry_wrap .container .row img {
+    width: 100%;
+}
+
+.ad_inquiry_wrap .container .row:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.ad_inquiry_wrap .container .row:nth-child(2n) .ad_in_box {
+    padding: 0 0 0 40px;
+}
+
+.ad_in_box h1 {
+    color: #000;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 60px 0;
+}
+
+.ad_in_box p {
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+}
+
+.ad_in_box p span {
+    color: #F8350A;
+}
+
+.ad_in_box h6 {
+    color: #444;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+}
+
+.ad_in_box .btn_group {
+    display: flex;
+    gap: 16px;
+}
+
+.ad_in_box .btn_group button {
+    background: #fff;
+    border-radius: 100px;
+    border: 1px solid #CCC;
+    color: #666;
+    font-size: 16px;
+    padding: 12px 0;
+    width: 240px;
+}
+
+@media (max-width: 992px) {
+    .ad_inquiry_wrap {
+        padding: 60px 0;
+    }
+
+    .ad_inquiry_wrap .container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .ad_inquiry_wrap .container .row {
+        width: auto;
+    }
+
+    .ad_inquiry_wrap .container .row .col-12:nth-child(1) {
+        margin: 0 0 40px 0;
+    }
+
+    .ad_inquiry_wrap .container .row:nth-child(2n) .ad_in_box {
+        padding: 0;
+    }
+
+    .ad_in_box h1 {
+        font-size: 24px;
+        margin: 0 0 40px 0;
+    }
+
+    .ad_in_box p {
+        font-size: 18px;
+    }
+
+    .ad_in_box h6 {
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 0 20px 0;
+    }
+
+    .ad_in_box .btn_group button {
+        background: #fff;
+        border-radius: 100px;
+        border: 1px solid #CCC;
+        color: #666;
+        font-size: 14px;
+        padding: 8px 0;
+        width: 50%;
+    }
 }
