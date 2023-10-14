@@ -910,7 +910,6 @@ function getSearchPageBlurb(partnerTp, api){
 
 }
 
-
 function getCategory(api){
 
     let result;
@@ -946,7 +945,6 @@ function getCategory(api){
 
 }
 
-
 function getCustomerService(api){
 
     let result;
@@ -980,6 +978,108 @@ function getCustomerService(api){
     });
 
     return result;
+
+}
+
+function getNoticePaging(api, param){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getNoticePaging"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
+//페이징 처리 공통 함수
+function generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    const totalGroups = Math.ceil(totalPages / itemsInGroup);
+
+    const startPage = (currentPageGroup - 1) * itemsInGroup + 1;
+    const endPage = Math.min(startPage + itemsInGroup - 1, totalPages);
+
+    const $paginationUL = $("#pagination");
+    $paginationUL.empty(); // 기존 내용을 지웁니다.
+
+    // 이전 그룹 버튼을 생성합니다.
+    if (currentPageGroup > 1) {
+        const $prevLi = $("<li class='prev'></li>");
+        const $prevImg = $("<img src='img/icon/i_chevron_left.svg' alt=''>");
+        $prevLi.append($prevImg);
+        $prevLi.on("click", function() {
+            // 이전 그룹 버튼 클릭 시 처리
+            generatePaging(totalItems, itemsPerPage, currentPageGroup - 1, itemsInGroup);
+        });
+        $paginationUL.append($prevLi);
+    }
+
+    // 페이지 번호 버튼을 생성합니다.
+    for (let page = startPage; page <= endPage; page++) {
+
+        let $pageLi = $("<li></li>");
+
+        $pageLi.text(page);
+        $pageLi.on("click", function() {
+            $paginationUL.find("li").removeClass("active"); // 다른 페이지에서 active 클래스 제거
+            $pageLi.addClass("active"); // 현재 페이지에 active 클래스 추가
+
+            let param = {
+                COMPANY_CD : "1000",
+                LIMIT : itemsPerPage,
+                OFFSET : parseInt(page) -1,
+            }
+
+            //let list = getNoticePaging('local', param).map;
+            let list = getNoticePaging('prod', param).map;
+            $("#announcement-list").children().not(".bg_gray").remove();
+            console.log("page ", page, list);
+
+            if(list.list != ''){
+                list = list.list;
+                for(let i = 0; i < list.length; i++){
+                    $('#announcement-list').append(`<tr id="` + list[i].SEQ + `" ><td>` + list[i].TITLE + `</td></tr>`);
+                }
+            }
+
+        });
+
+        $paginationUL.append($pageLi);
+    }
+
+    // 다음 그룹 버튼을 생성합니다.
+    if (currentPageGroup < totalGroups) {
+        const $nextLi = $("<li class='next'></li>");
+        const $nextImg = $("<img src='img/icon/i_chevron_right.svg' alt=''>");
+        $nextLi.append($nextImg);
+        $nextLi.on("click", function() {
+            // 다음 그룹 버튼 클릭 시 처리
+            generatePaging(totalItems, itemsPerPage, currentPageGroup + 1, itemsInGroup);
+        });
+        $paginationUL.append($nextLi);
+    }
+
 
 }
 

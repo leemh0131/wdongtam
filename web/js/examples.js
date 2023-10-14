@@ -117,41 +117,7 @@ $(document).ready(function () {
     },
   });
 
-  // 초기 탭 설정
-  $(".tab_nav_item:first").addClass("active");
-  $(".tab_pane:first").addClass("active");
 
-  // 탭 클릭 이벤트 처리
-  $(".tab_nav_item").click(function () {
-    $(".tab_nav_item").removeClass("active");
-    $(this).addClass("active");
-
-    var tabIndex = $(this).index();
-    $(".tab_pane").removeClass("active");
-    $(".tab_pane:eq(" + tabIndex + ")").addClass("active");
-  });
-
-  // 초기 중첩된 탭 설정
-  $(".nested_tab_nav_item:first").addClass("active");
-  $(".nested_tab_pane:first").addClass("active");
-
-  // 중첩된 탭 클릭 이벤트 처리
-  $(".nested_tab_nav_item").click(function () {
-    $(".nested_tab_nav_item").removeClass("active");
-    $(this).addClass("active");
-
-    var nestedTabIndex = $(this).index();
-    $(".nested_tab_pane").removeClass("active");
-    $(".nested_tab_pane:eq(" + nestedTabIndex + ")").addClass("active");
-  });
-
-  // 아코디언
-  $(".accordion_title").click(function () {
-    $(".accordion_content").slideUp();
-    $(this).parent().toggleClass("active");
-    $(".accordion_item").not($(this).parent()).removeClass("active");
-    $(this).next(".accordion_content").slideToggle();
-  });
 
   // 지역선택
   $("#region").click(function () {
