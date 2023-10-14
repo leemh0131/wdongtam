@@ -132,51 +132,7 @@
                 <h1>실시간 의뢰상담</h1>
                 <div class="real_time_box">
                     <ul class="real_time_list">
-                        <li>
-                            <div class="real_time_item">
-                                <p>가족분쟁으로 인한 상담건입니다.</p>
-                                <ul>
-                                    <li>김*우</li>
-                                    <li>2023-07-18</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="real_time_item">
-                                <p>[비밀글] 강아지를 찾고 싶은데, 잃어버린 곳은 서울 구로구 근처쯤인데요.</p>
-                                <ul>
-                                    <li>김*우</li>
-                                    <li>2023-07-18</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="real_time_item">
-                                <p>가족분쟁으로 인한 상담건입니다.</p>
-                                <ul>
-                                    <li>김*우</li>
-                                    <li>2023-07-18</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="real_time_item">
-                                <p>가족분쟁으로 인한 상담건입니다.</p>
-                                <ul>
-                                    <li>김*우</li>
-                                    <li>2023-07-18</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="real_time_item">
-                                <p>가족분쟁으로 인한 상담건입니다.</p>
-                                <ul>
-                                    <li>김*우</li>
-                                    <li>2023-07-18</li>
-                                </ul>
-                            </div>
-                        </li>
+
                     </ul>
                 </div>
             </section>
@@ -233,50 +189,16 @@
                         <div class="col-6">
                             <div class="main_box">
                                 <h1>공지사항</h1>
-                                <ul>
-                                    <li>
-                                        <dl>
-                                            <dt>[이벤트] 의뢰상담글을 작성하신 모든분께 스타벅스 ICE 아메리카노 기프티콘을 드립니다.</dt>
-                                            <dd>2023-07-18</dd>
-                                        </dl>
-                                    </li>
-                                    <li>
-                                        <dl>
-                                            <dt>[이벤트] 의뢰상담글을 작성하신 모든분께 스타벅스 ICE 아메리카노 기프티콘을 드립니다.</dt>
-                                            <dd>2023-07-18</dd>
-                                        </dl>
-                                    </li>
-                                    <li>
-                                        <dl>
-                                            <dt>[이벤트] 의뢰상담글을 작성하신 모든분께 스타벅스 ICE 아메리카노 기프티콘을 드립니다.</dt>
-                                            <dd>2023-07-18</dd>
-                                        </dl>
-                                    </li>
+                                <ul id="mainNotice">
+
                                 </ul>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="main_box">
                                 <h1>실시간 의뢰상담</h1>
-                                <ul>
-                                    <li>
-                                        <dl>
-                                            <dt>가족분쟁으로 인한 상담건입니다.</dt>
-                                            <dd>2023-07-18</dd>
-                                        </dl>
-                                    </li>
-                                    <li>
-                                        <dl>
-                                            <dt>[비밀글] 가족분쟁으로 인한 상담건입니다.</dt>
-                                            <dd>2023-07-18</dd>
-                                        </dl>
-                                    </li>
-                                    <li>
-                                        <dl>
-                                            <dt>[비밀글] 가족분쟁으로 인한 상담건입니다.</dt>
-                                            <dd>2023-07-18</dd>
-                                        </dl>
-                                    </li>
+                                <ul id="communityMainPagePc" class="pc_real_time_list">
+
                                 </ul>
                             </div>
                         </div>
@@ -373,18 +295,425 @@
     <script src="lib/jquery.min.js"></script>
     <script src="lib/bootstrap.bundle.min.js"></script>
     <script src="lib/swiper-bundle.min.js"></script>
-    <script src="js/examples.js"></script>
+    <!--<script src="js/examples.js"></script>-->
     <script src="js/partnerCommon.js"></script>
     <script>
-        //getPartnerMainList('dev');
-        //getPartnerMainList('local');
-        //getPartnerMainList('prod');
-        //getTest('local', 'local');
         $(document).ready(function(){
             $(".header-page").load("/header.html");
             $(".footer-page").load("/footer.html");
-            getPartnerMainList('prod');
+            //let res = getPartnerMainList('local');
+            let res = getPartnerMainList('prod');
+
+            if(nvl(res.map) != ''){
+                res = res.map;
+            } else if(nvl(res.error) != ''){
+                console.log("getPartnerDetail error", res.error);
+            } else {
+                console.log("getPartnerDetail error");
+            }
+            console.log(res);
+
+            //화면 초기화
+            $("main.pc section.section_01 div.col-3").remove();
+            $("main.pc section.section_03 div.col-4").remove();
+            $("main.pc section.section_04 div.col-3").remove();
+
+            //유튜브 메인 광고 그리기
+            if(nvl(res.vvvipMainYouTube[0]) != ''){
+                let mainPcHtml =
+                    `<div class="col-6">
+                        <div class="box">
+                            <div class="img video">
+                                <iframe class="youtube" width="328" height="182" src="` + res.vvvipMainYouTube[0].youtube_link + `"
+                                        title="YouTube video player" frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen></iframe>
+                                <img src="` + res.vvvipMainYouTube[0].img_url + `" onError="this.src='img/sample/sample_01.png'" alt="">
+                            </div>
+                            <div class="box_info">
+                                <h6>` + res.vvvipMainYouTube[0].partner_nm + `</h6>
+                                <p>` + res.vvvipMainYouTube[0].company_intro + `</p>
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <img src="img/icon/i_call.png" alt="">
+                                            ` + res.vvvipMainYouTube[0].tel_no + `
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button onclick="blurbDetailPage(this)" id="` + res.vvvipMainYouTube[0].partner_cd + `" type="button">상세보기</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`;
+
+                let mainMoHtml =
+                    `<div class="swiper-slide">
+                        <div class="box">
+                            <div class="img video">
+                                <iframe
+                                    width="100%" height="174" src="` + res.vvvipMainYouTube[0].youtube_link + `" class="youtube"
+                                    title="YouTube video player" frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen></iframe>
+                            </div>
+                            <div class="box_info">
+                                <h6>` + res.vvvipMainYouTube[0].partner_nm + `</h6>
+                                <p>` + res.vvvipMainYouTube[0].company_intro + `</p>
+                                <ul>
+                                    <li>
+                                        <a onclick="callClick(` + ' + res.vvvipMainYouTube[0].partner_cd + ' + `)" href="tel:` + res.vvvipMainYouTube[0].tel_no + `">
+                                            <img src="img/icon/i_call.png" alt="">
+                                                ` + res.vvvipMainYouTube[0].tel_no + `
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button onclick="blurbDetailPage(this)" id="` + res.vvvipMainYouTube[0].partner_cd + `" type="button">상세보기</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`;
+
+                $("main.pc section.section_01 div.row").append(mainPcHtml);
+
+                $("main.mo section.section_01 div.swiper-wrapper").append(mainMoHtml);
+
+            }
+
+            //메인 광고 그리기
+            if(nvl(res.vvvipMain) != ''){
+                let vvvipMain = res.vvvipMain;
+
+                //PC
+                let col3Content = `
+                <div class="col-3">
+                    <div class="box">
+                        <div class="img">
+                            <img src="img_url" onerror="this.src='img/sample/sample_01.png'" alt="">
+                        </div>
+                        <div class="box_info">
+                            <h6>partner_nm</h6>
+                            <p>company_intro</p>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                    <img src="img/icon/i_call.png" alt="">
+                                    tel_no
+                                    </a>
+                                </li>
+                                <li>
+                                    <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>`;
+
+                //모바일
+                let moContent = `
+                <div class="swiper-slide">
+                    <div class="box">
+                        <div class="img">
+                            <img onerror="this.src='img/sample/sample_01.png'" src="img_url" alt="">
+                        </div>
+
+                        <div class="box_info">
+                            <h6>partner_nm</h6>
+                            <p>company_intro</p>
+                            <ul>
+                                <li>
+                                    <a onclick="callClick('partner_cd')" href="a_no">
+                                        <img src="img/icon/i_call.png" alt="">
+                                        tel_no
+                                    </a>
+                                </li>
+                                <li>
+                                    <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                `;
+
+                for(let i = 0; i < vvvipMain.length; i++){
+                    let html = col3Content;
+                    html = html.replace('img_url', nvl(vvvipMain[i].img_url));
+                    html = html.replace('partner_nm', nvl(vvvipMain[i].partner_nm));
+                    html = html.replace('partner_cd', nvl(vvvipMain[i].partner_cd));
+                    html = html.replace('company_intro', nvl(vvvipMain[i].company_intro));
+                    html = html.replace('a_no', 'tel:' + nvl(vvvipMain[i].tel_no));
+                    html = html.replace('tel_no', nvl(vvvipMain[i].tel_no));
+                    $("main.pc section.section_01 div.row").append(html);
+
+                    let moHtml = moContent;
+                    moHtml = moHtml.replace('img_url', vvvipMain[i].img_url);
+                    moHtml = moHtml.replace('partner_nm', vvvipMain[i].partner_nm);
+                    moHtml = moHtml.replace('company_intro', vvvipMain[i].company_intro);
+                    moHtml = moHtml.replace('tel_no', vvvipMain[i].tel_no);
+                    $("main.mo section.section_01").find(".swiper-wrapper").append(moHtml);
+                }
+
+            }
+
+            //VVIP업체 이미지 광고 그리기
+            if(nvl(res.vvipBox) != ''){
+
+                let col4Content = `
+                    <div class="col-4">
+                        <div class="box">
+                            <div class="img">
+                                <img src="img_url" onerror="this.src='img/sample/sample_01.png'" alt="">
+                            </div>
+                            <div class="box_info">
+                                <h6>partner_nm</h6>
+                                <p>company_intro</p>
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <img src="img/icon/i_call.png" alt="">
+                                            tel_no
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`;
+
+                let moContent = `
+                <div class="swiper-slide">
+                    <div class="box">
+                        <div class="img">
+                            <img onerror="this.src='img/sample/sample_01.png'" src="img_url" alt="">
+                        </div>
+                        <div class="box_info">
+                            <h6>partner_nm</h6>
+                            <p>company_intro</p>
+                            <ul>
+                                <li>
+                                    <a onclick="callClick('partner_cd')" href="a_no">
+                                        <img src="img/icon/i_call.png" alt="">
+                                        tel_no
+                                    </a>
+                                </li>
+                                <li>
+                                    <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>`;
+
+                let vvipBox = res.vvipBox;
+                for(let i = 0; i < vvipBox.length; i++){
+
+                    let html = col4Content;
+
+                    html = html.replace('img_url', nvl(vvipBox[i].img_url));
+                    html = html.replace('partner_nm', nvl(vvipBox[i].partner_nm));
+                    html = html.replace('partner_cd', nvl(vvipBox[i].partner_cd));
+                    html = html.replace('company_intro', nvl(vvipBox[i].company_intro));
+                    html = html.replace('tel_no', nvl(vvipBox[i].tel_no));
+                    $("main.pc section.section_03 div.row").append(html);
+
+                    let moHtml = moContent;
+
+                    moHtml = moHtml.replace('img_url', nvl(vvipBox[i].img_url));
+                    moHtml = moHtml.replace('partner_nm', nvl(vvipBox[i].partner_nm));
+                    moHtml = moHtml.replace('partner_cd', nvl(vvipBox[i].partner_cd));
+                    moHtml = moHtml.replace('company_intro', nvl(vvipBox[i].company_intro));
+                    moHtml = moHtml.replace('tel_no', nvl(vvipBox[i].tel_no));
+                    moHtml = moHtml.replace('a_no', 'tel:' + nvl(vvipBox[i].tel_no));
+                    $("main.mo section.section_04").find(".swiper-wrapper").append(moHtml);
+
+                }
+            }
+
+            //VIP 일반 광고 그리기
+            if(nvl(res.vipBox) != ''){
+
+                let vipCol3Content = `
+                    <div class="col-3">
+                        <div class="box type2">
+                            <div class="box_info">
+                                <p>company_intro</p>
+                                <ul>
+                                    <li>
+                                        partner_nm
+                                    </li>
+                                    <li>
+                                        <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`;
+
+                let moContent = `
+                <div class="swiper-slide">
+                    <div class="box type2">
+                        <div class="box_info">
+                            <p>company_intro</p>
+                            <ul>
+                                <li>
+                                    partner_nm
+                                </li>
+                                <li>
+                                    <button onclick="blurbDetailPage(this)" id="partner_cd" type="button">상세보기</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>`;
+
+                let vipBox = res.vipBox;
+
+                for(let i = 0; i < vipBox.length; i++){
+
+                    let html = vipCol3Content;
+                    html = html.replace('partner_nm', nvl(vipBox[i].partner_nm));
+                    html = html.replace('partner_cd', nvl(vipBox[i].partner_cd));
+                    html = html.replace('company_intro', nvl(vipBox[i].company_intro));
+                    html = html.replace('tel_no', nvl(vipBox[i].tel_no));
+                    $("main.pc section.section_04 div.row").append(html);
+
+                    let moHtml = moContent;
+                    moHtml = moHtml.replace('partner_nm', nvl(vipBox[i].partner_nm));
+                    moHtml = moHtml.replace('partner_cd', nvl(vipBox[i].partner_cd));
+                    moHtml = moHtml.replace('company_intro', nvl(vipBox[i].company_intro));
+                    $("main.mo section.section_05").find(".swiper-wrapper").append(moHtml);
+
+                }
+            }
+
+            //pc배너
+            if(nvl(res.center_banner_img) != ''){
+                for(let i = 0; i <res.center_banner_img.length; i++){
+                    if(res.center_banner_img[i].table_id == 'CENTER_BANNER_PC'){
+                        $('#main-center-banner-pc').attr('src', res.center_banner_img[i].img_url);
+                    } else {
+                        $('#main-center-banner-mo').attr('src', res.center_banner_img[i].img_url);
+                    }
+                }
+
+            }
+
+            //공지
+            $('#mainNotice').empty() // 자식요소 제거
+            if(nvl(res.getMainNotice) != ''){
+                for(let i = 0; i <res.getMainNotice.length; i++){
+                    let list = res.getMainNotice;
+                    $('#mainNotice').append(
+                        `<li id="` + list[i].SEQ + `">
+                        <dl>
+                        <dt>` + list[i].TITLE + `</dt>
+                        <dd>` + list[i].DTS + `</dd>
+                        </dl>
+                        </li>`
+                    )
+                }
+
+            }
+
+            //실시간
+            $('#communityMainPagePc').empty() // 자식요소 제거
+            if(nvl(res.getCommunityMainPagePc) != ''){
+                for(let i = 0; i <res.getCommunityMainPagePc.length; i++){
+                    let list = res.getCommunityMainPagePc;
+                    $('#communityMainPagePc').append(
+                        `<li id="` + list[i].SEQ + `">
+                        <dl>
+                        <dt>` + list[i].TITLE + `</dt>
+                        <dd>` + list[i].DTS + `</dd>
+                        </dl>
+                        </li>`
+                    )
+                }
+            }
+
+            if(nvl(res.getCommunityMainPageMo) != ''){
+                for(let i = 0; i <res.getCommunityMainPageMo.length; i++){
+                    let list = res.getCommunityMainPageMo;
+                    $(".real_time_list").append(
+                        `<li id="` + list[i].SEQ + `">
+                            <div class="real_time_item">
+                                <p>` + list[i].TITLE + `</p>
+                                <ul>
+                                <!--<li>김*우</li>-->
+                                <li>` + list[i].DTS + `</li>
+                                </ul>
+                            </div>
+                        </li>`
+                    );
+
+                }
+            }
+
         });
+
+        // PC
+        // 새로운 아이템 추가 함수
+        function pcAddItem() {
+            var newItem = `
+                    <li>
+                      <dl>
+                          <dt>가족분쟁으로 인한 상담건입니다.</dt>
+                          <dd>2023-07-18</dd>
+                      </dl>
+                  </li>
+            `;
+
+            // 첫 번째 아이템 애니메이션 적용 (위로 이동)
+            $(".pc_real_time_list li:first").animate(
+                { marginTop: "-12px" },
+                100,
+                function () {
+                    $(this).remove(); // 애니메이션 완료 후 삭제
+                }
+            );
+
+            // 새로운 아이템 추가 (맨 아래에)
+            $(".pc_real_time_list").append(newItem);
+        }
+
+        // 일정 간격으로 addItem 함수 호출 (예: 3초마다)
+        //setInterval(pcAddItem, 3000);
+
+
+        // 새로운 아이템 추가 함수
+        function addItem() {
+            var newItem = `
+                    <li>
+                      <div class="real_time_item">
+                          <p>[비밀글] 강아지를 찾고 싶은데, 잃어버린 곳은 서울 구로구 근처쯤인데요.</p>
+                          <ul>
+                              <li>김*우</li>
+                              <li>2023-07-18</li>
+                          </ul>
+                      </div>
+                    </li>
+                  `;
+
+            // 첫 번째 아이템 애니메이션 적용 (위로 이동)
+            $(".real_time_list li:first").animate(
+                { marginTop: "-70px" },
+                1000,
+                function () {
+                    $(this).remove(); // 애니메이션 완료 후 삭제
+                }
+            );
+
+            // 새로운 아이템 추가 (맨 아래에)
+            $(".real_time_list").append(newItem);
+        }
+
+        // 일정 간격으로 addItem 함수 호출 (예: 3초마다)
+        //setInterval(addItem, 3000);
 
     </script>
 
