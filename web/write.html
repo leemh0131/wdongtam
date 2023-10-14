@@ -147,25 +147,25 @@
                     <div class="con_body">
                         <div class="input_wrap">
                             <div class="custom_select">
-                                <span class="selected_option">분류</span>
+                                <span class="selected_option">주제</span>
                                 <ul class="options">
-                                    <li data-value="option1">옵션 1</li>
+                                    <!--<li data-value="option1">옵션 1</li>
                                     <li data-value="option2">옵션 2</li>
-                                    <li data-value="option3">옵션 3</li>
+                                    <li data-value="option3">옵션 3</li>-->
                                 </ul>
                             </div>
                             <div class="input_group">
-                                <input type="text" placeholder="제목">
+                                <input id="title" type="text" placeholder="제목">
                             </div>
                             <div class="input_group">
-                                <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                                <textarea name="" id="contents" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="con_fot">
                         <div class="btn_group">
-                            <button type="button" class="btn_check">확인</button>
-                            <button type="button" class="btn_close back_button">뒤로</button>
+                            <button onclick="writing();" type="button" class="btn_check">확인</button>
+                            <button onclick="window.history.back()" type="button" class="btn_close back_button">뒤로</button>
                         </div>
                     </div>
                 </div>
@@ -185,14 +185,101 @@
     <script src="/js/examples.js"></script>
     <script src="js/partnerCommon.js"></script>
     <script>
-        //getPartnerMainList('dev');
-        //getPartnerMainList('local');
-        //getPartnerMainList('prod');
-        //getTest('local', 'local');
+        const url = new URL(window.location.href);
+        // URLSearchParams 객체
+        const urlParams = url.searchParams;
+        let communityTp = nvl(urlParams.get('communityTp'));
+
+        if(communityTp == ''){
+            alert("잘못된경로로 들어왔습니다.");
+            window.history.back();
+        }
+
         $(document).ready(function(){
+
             $(".header-page").load("/header.html");
             $(".footer-page").load("/footer.html");
+
+            let param = {
+                COMPANY_CD : "1000",
+                FIELD_CD : "ES_Q0137",
+            }
+
+            let codes = getCommonCode('prod', param).map;
+            //let codes = getCommonCode('local', param).map;
+
+            if(codes != ''){
+                codes = codes.list;
+                $('.options').empty();
+                for(let i = 0; i < codes.length; i++){
+                    $('.options').append(`<li data-value="` + codes[i].CODE + `">` + codes[i].NAME + `</li>`);
+                }
+            }
+
         });
+
+        $(document).on("click", ".options li", function(e) {
+            // 클릭 이벤트 처리
+            let code = $(this).data("value");
+            let text = e.target.textContent;
+            $('.selected_option').text(text);
+            $('.selected_option').attr('id', code);
+        });
+
+        function writing(){
+
+            let COMMUNITY_ST = nvl($('.selected_option').attr('id'));
+            let TITLE = nvl($('#title').val());
+            let CONTENTS = nvl($('#contents').val());
+
+            if(TITLE == ''){
+                alert("제목을 입력해주세요");
+            }
+
+            if(CONTENTS == ''){
+                alert("내용을 입력해주세요");
+            }
+
+            if(COMMUNITY_ST == ''){
+                alert("주제를 선택해주세요.");
+            }
+
+            let param = {
+                COMPANY_CD : '1000',
+                COMMUNITY_TP : communityTp,
+                COMMUNITY_ST : COMMUNITY_ST,
+                TITLE : TITLE,
+                CONTENTS : CONTENTS
+            }
+
+            //let result = setWrite('local', param);
+            let result = setWrite('prod', param);
+
+            try {
+
+                if(nvl(result.map) != ''){
+                    result = result.map;
+
+                    if(nvl(result.response) == 'ok'){
+                        alert("작성이 완료되었습니다.");
+                        if(communityTp == '01'){
+                            location.href = '/consulting.html';
+                        } else {
+                            //커뮤니티 페이지 필요;
+                        }
+                    } else {
+                        throw "Error";
+                    }
+
+                }
+
+            } catch (e){
+                alert("네트워크 오류발행");
+                return;
+            }
+
+        }
+
 
     </script>
 

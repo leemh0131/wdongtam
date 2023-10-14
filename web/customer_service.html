@@ -361,9 +361,9 @@
 
                 //페이징버튼 생성
                 if (nvl(customerService.getPaging, 0) > 0) {
-                    // 예시 사용
+
                     totalItems = customerService.getPaging; // 전체 항목 수
-                    generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup);
+                    generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup, pagingCallback);
 
                     const page1Element = $("#pagination li:contains('1')"); // 페이지 번호가 1인 요소를 선택
                     page1Element.click(); // 가상으로 클릭
@@ -449,6 +449,27 @@
             }
 
         });
+
+        let pagingCallback = function (page){
+
+            let param = {
+                COMPANY_CD : "1000",
+                LIMIT : itemsPerPage,
+                OFFSET : parseInt(page) -1,
+            }
+
+            //let list = getNoticePaging('local', param).map;
+            let list = getNoticePaging('prod', param).map;
+            $("#announcement-list").children().not(".bg_gray").remove();
+            console.log("page ", page, list);
+
+            if(list.list != ''){
+                list = list.list;
+                for(let i = 0; i < list.length; i++){
+                    $('#announcement-list').append(`<tr id="` + list[i].SEQ + `" ><td>` + list[i].TITLE + `</td></tr>`);
+                }
+            }
+        }
 
     </script>
 

@@ -1013,7 +1013,7 @@ function getNoticePaging(api, param){
 }
 
 //페이징 처리 공통 함수
-function generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup) {
+function generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup, callback) {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
     const totalGroups = Math.ceil(totalPages / itemsInGroup);
 
@@ -1030,7 +1030,7 @@ function generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup
         $prevLi.append($prevImg);
         $prevLi.on("click", function() {
             // 이전 그룹 버튼 클릭 시 처리
-            generatePaging(totalItems, itemsPerPage, currentPageGroup - 1, itemsInGroup);
+            generatePaging(totalItems, itemsPerPage, currentPageGroup - 1, itemsInGroup, callback);
         });
         $paginationUL.append($prevLi);
     }
@@ -1045,23 +1045,8 @@ function generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup
             $paginationUL.find("li").removeClass("active"); // 다른 페이지에서 active 클래스 제거
             $pageLi.addClass("active"); // 현재 페이지에 active 클래스 추가
 
-            let param = {
-                COMPANY_CD : "1000",
-                LIMIT : itemsPerPage,
-                OFFSET : parseInt(page) -1,
-            }
-
-            //let list = getNoticePaging('local', param).map;
-            let list = getNoticePaging('prod', param).map;
-            $("#announcement-list").children().not(".bg_gray").remove();
-            console.log("page ", page, list);
-
-            if(list.list != ''){
-                list = list.list;
-                for(let i = 0; i < list.length; i++){
-                    $('#announcement-list').append(`<tr id="` + list[i].SEQ + `" ><td>` + list[i].TITLE + `</td></tr>`);
-                }
-            }
+            //callback 변수는 함수이다. 파라미터는 page 숫자 리스트를 그려주는 함수를 만들어주면 됨.
+            callback(parseInt(page));
 
         });
 
@@ -1083,4 +1068,97 @@ function generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup
 
 }
 
+function getCommonCode(api, param){
 
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getCommonCode"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
+function setWrite(api, param){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/setWrite"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
+function getConsulting(api, param){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    param.IMG_URL = url + '/PARTNER_TEMP/',
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getConsulting"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}

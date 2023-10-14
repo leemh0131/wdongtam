@@ -118,7 +118,6 @@ $(document).ready(function () {
   });
 
 
-
   // 지역선택
   $("#region").click(function () {
     $(".region_wrap").toggle();
@@ -128,29 +127,7 @@ $(document).ready(function () {
     $(this).toggleClass("active");
   });
 
-  // 분류선택
-  $("#selectCategory").click(function () {
-    $(".select_category_wrap").toggle();
-  });
 
-  $(".category li").click(function () {
-    $(this).toggleClass("active");
-  });
-
-  // prev 버튼 클릭 시
-  $(".prev").on("click", function () {
-    $(".category").animate({ scrollLeft: "-=100px" }, "slow");
-  });
-
-  // next 버튼 클릭 시
-  $(".next").on("click", function () {
-    $(".category").animate({ scrollLeft: "+=100px" }, "slow");
-  });
-
-  // category_all 버튼 클릭 시
-  $(".category_all").on("click", function () {
-    $(".select_category_wrap").slideToggle("slow");
-  });
 
   // 모달 열기 버튼 클릭 이벤트
   $(".open_modal").click(function () {
@@ -174,13 +151,9 @@ $(document).ready(function () {
     $options.toggleClass("open");
   });
 
-  // 옵션 선택 이벤트
-  $(".options li").click(function () {
-    var selectedValue = $(this).data("value");
-    var selectedText = $(this).text();
-    var $customSelect = $(this).closest(".custom_select");
-    $customSelect.find(".selected_option").text(selectedText);
-    $customSelect.find(".options").removeClass("open");
+  // 분류선택
+  $("#selectCategory").click(function () {
+    $(".select_category_wrap").toggle();
   });
 
   // 커스텀 select box 외부 클릭 시 닫기
@@ -204,8 +177,5 @@ $(document).ready(function () {
     }
   });
 
-  // 뒤로가기
-  $(".back_button").click(function () {
-    window.history.back();
-  });
+
 });
