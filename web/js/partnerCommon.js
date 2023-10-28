@@ -215,175 +215,15 @@ function getPartnerDetail(api, partnerCd){
             } else {
                 console.log("getPartnerDetail error");
             }
-            console.log(result);
-
-            let partnerInfo = result.partner;
-
-            // 광고상세
-            $('.detail_title h1').text(nvl(partnerInfo.PARTNER_NM, '정보없음'));
-
-            let partnerInfoHtml =   `<dt>무료상담</dt>` +
-                                    `<dd>` + nvl(partnerInfo.TEL_NO, '정보없음') + `</dd>` +
-                                    `<dt>홈페이지</dt>` +
-                                    `<dd class="td_unline"><a target='_blank' href="` + nvl(partnerInfo.HOME_PAGE, '#') + `">` + nvl(partnerInfo.HOME_PAGE, '정보없음') + `</a></dd>` +
-                                    `<dt>카카오톡</dt>` +
-                                    `<dd>` + nvl(partnerInfo.KAKAOTALK, '정보없음') + `</dd>` +
-                                    `<dt>텔레그램</dt>` +
-                                    `<dd>` + nvl(partnerInfo.TELEGRAM, '정보없음') + `</dd>` +
-                                    `<dt>유튜브</dt>` +
-                                    `<dd>` + nvl(partnerInfo.YOUTUBE_LINK) + `</dd>` +
-                                    `<dt>업무가능지역</dt>`;
-
-            let jobZone = nvl(result.job_zone);
-            let jobZoneSubHtml = '';
-            if(jobZone != ''){
-                let jobZoneHtml =   `<dd>` +
-                                    `<ul class="area">`;
-                for(let i = 0; i < jobZone.length; i++){
-                    jobZoneHtml += `<li><i class="i i_pin"></i>` + jobZone[i] + `</li>`
-
-                    jobZoneSubHtml +=`
-                                    <div class="col-4 col-lg-3 item">` +
-                                        `<img src="img/icon/i_pin.svg" alt="">` + jobZone[i] +
-                                    `</div>`;
-                }
-                jobZoneHtml += `</ul></dd>`;
-
-                partnerInfoHtml += jobZoneHtml;
-
-            }
-            $('.partner-info').append(partnerInfoHtml);
-
-            //이미지
-            let img = nvl(result.img);
-            let imgHtml = '';
-            if(nvl(img) != ''){
-                for (let i = 0; i < img.length; i++){
-                    imgHtml +=
-                            `<div class="swiper-slide">`+
-                                `<img onError="this.src='img/sample/sample_01.png'" src="` + img[i].img_url + `" />`+
-                            `</div>`;
-                }
-                $('.main-img').append(imgHtml);
-            } else {
-                imgHtml +=
-                    `<div class="swiper-slide">`+
-                        `<img src="img/sample/sample_11.png" />` +
-                    `</div>`;
-                $('.main-img').append(imgHtml);
-            }
-
-            /*<div class="swiper-slide">
-            <img src="img/sample/sample_11.png" />
-            </div>*/
-
-
-            //업체소개
-            $('#partner-intro p').html(nvl(partnerInfo.COMPANY_INTRO_HTML));
-
-            //업무가능지역 - 자사보유
-            $('#job-zone div.row').append(jobZoneSubHtml);
-
-            //전문분야
-            let jobField = nvl(result.job_field);
-            let jobFieldIcon = nvl(result.job_field_icon);
-            if(jobField != ''){
-                for(let i = 0; i < jobField.length; i++){
-
-                    let html =  `<div class="col-4 col-lg-3 item">` +
-                                    `<img src="` + nvl(jobFieldIcon[i]) + `" alt="" >` + jobField[i] +
-                                `</div>`;
-                    $('#job-field div.row').append(html);
-                }
-            }
-
-            //전문분야
-            let jobEp = nvl(result.job_ep);
-            let jobEpIcon = nvl(result.job_ep_icon);
-            if(jobEp != ''){
-                for(let i = 0; i < jobEp.length; i++){
-
-                    let html =  `<div class="col-4 col-lg-3 item">` +
-                        `<img src="` + nvl(jobEpIcon[i]) + `" alt="" >` + jobEp[i] +
-                        `</div>`;
-                    $('#job-ep div.row').append(html);
-                }
-            }
-
-
-
-
-            //스페셜광고
-            let blurbSpecial = nvl(result.blurbSpecial);
-            if(blurbSpecial != ''){
-
-                for(let i = 0; i < blurbSpecial.length; i++){
-                    let pcSpecialHtml =
-                            `<div class="col-3">` +
-                                `<div class="special_box">` +
-                                    `<img onError="this.src='img/sample/sample_01.png'" src="` + blurbSpecial[i].img_url + `" alt="">` +
-                                        `<div class="special_box_info">` +
-                                            `<h1>` + blurbSpecial[i].partner_nm + `</h1>` +
-                                            `<p>무료상담 : `+ blurbSpecial[i].tel_no +`</p>` +
-                                            `<button onClick="blurbDetailPage(this)" id="` + blurbSpecial[i].partner_cd + `" type="button">상세보기</button>` +
-                                        `</div>` +
-                                `</div>` +
-                            `</div>`;
-
-                    $("#special-blurb-pc").append(pcSpecialHtml);
-
-                    let moSpecialHtml =
-                        `<div class="swiper-slide">` +
-                            `<div class="special_box">` +
-                                `<img onError="this.src='img/sample/sample_01.png'" src="` + blurbSpecial[i].img_url + `" alt="">` +
-                                    `<div class="special_box_info">` +
-                                    `<h1>` + blurbSpecial[i].partner_nm + `</h1>` +
-                                    `<p>무료상담 : `+ blurbSpecial[i].tel_no +`</p>` +
-                                    `<button onClick="blurbDetailPage(this)" id="` + blurbSpecial[i].partner_cd + `" type="button">상세보기</button>` +
-                                    `</div>` +
-                            `</div>` +
-                        `</div>`;
-
-                    $("#special-blurb-mo").append(moSpecialHtml);
-
-                }
-
-            }
-
-            //사이드광고
-            let blurbSide = nvl(result.blurbSide);
-            if(blurbSide != ''){
-
-                for(let i = 0; i < blurbSide.length; i++){
-
-                    let blurbSideHtml =
-                            `<li>` +
-                                `<div class="detail_side_box">` +
-                                        `<img onError="this.src='img/sample/sample_01.png'" src="` + blurbSide[i].img_url + `" alt="">` +
-                                        `<h4>` + blurbSide[i].partner_nm + `</h4>` +
-                                        `<p>편하게 연락주시면 친절한 상담 도와드리겠습니다.</p>` +
-                                        `<button onClick="blurbDetailPage(this)" id="` + blurbSide[i].partner_cd + `" type="button">상세보기</button>` +
-                                `</div>` +
-                            `</li>`;
-
-                    $("#blurb-side").append(blurbSideHtml);
-                }
-
-            }
-
-
-
-
-
-            //$('#JOB_ZONE').text(nvl(partnerInfo.JOB_ZONE, '정보없음'));
-            //$('#COMPANY_INTRO').text(nvl(partnerInfo.COMPANY_INTRO, '정보없음'));
-
 
         },
         error: function (x, o, e) {
             result = {x : x, o : o, e : e};
         }
     });
+
+
+    return result;
 
 }
 
@@ -851,6 +691,106 @@ function getConsulting(api, param){
     $.ajax({
         type: "POST",
         url: [url + "/api/web/v1/getConsulting"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
+function getConsultingList(api, param){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+        $.ajax({
+            type: "POST",
+            url: [url + "/api/web/v1/getConsultingList"],
+            contentType: "application/json; charset=UTF-8",
+            async : false,
+            data: JSON.stringify(param),
+            success: function (res) {
+                result = res;
+            },
+            error: function (x, o, e) {
+                result = {x : x, o : o, e : e};
+            }
+        });
+
+    return result;
+
+}
+
+function communityDetail(id){
+
+    alert("준비중입니다.");
+    return;
+
+}
+
+function setReviewWrite(api, param){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/reviewWrite"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
+function getReviewList(api, param){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getReviewList"],
         contentType: "application/json; charset=UTF-8",
         async : false,
         data: JSON.stringify(param),

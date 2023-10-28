@@ -47,7 +47,7 @@ section {
 .box img {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-    height: 174px;
+	height: 174px;
 }
 
 .box .img.video iframe {
@@ -436,14 +436,21 @@ section {
     }
 
     .section_03 .box .img {
-        border-radius: 12px;
+        border-top-left-radius: 12px;
+		border-top-right-radius: 12px;
+		border-bottom-right-radius : 4px;
+		border-bottom-left-radius: 4px;
         height: 194px !important;
         margin: 20px 0 0 0;
         padding: 0 20px;
     }
 
     .section_03 .box .img img {
-        border-radius: 12px;
+        
+		border-top-left-radius: 12px;
+		border-top-right-radius: 12px;
+		border-bottom-right-radius : 4px;
+		border-bottom-left-radius: 4px;
     }
 
     .box .img img {
@@ -1619,6 +1626,7 @@ section {
     color: #666;
     font-size: 14px;
     font-weight: 400;
+    -webkit-line-clamp: 2;
 }
 
 @media (min-width: 992px) {
@@ -1642,35 +1650,45 @@ section {
         flex-direction: column;
         flex-wrap: wrap;
         flex: 0 0 auto;
-        width: calc(100% - 200px)
+        width: calc(100% - 200px);
+    }
+
+    .list_info p {
+        align-items: center;
+        display: -webkit-box;
+        margin: auto 0 0 0;
+        width: calc(100% - 5%);
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-word;
+        -webkit-line-clamp: 1;/* // 원하는 라인수*/
+        -webkit-box-orient: vertical
+    }
+
+    .list_info p span {
+        display: -webkit-box;
+        overflow: hidden;
+        margin: 0 0 0 4px;
+        width: calc(100% - 77%);
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical
+        /*white-space: nowrap;*/
     }
 
     .list_info span.orange {
-        max-width: 54px;
+        max-width: 56px;
     }
 
     .list_info span.blue {
-        max-width: 64px;
+        max-width: 67px;
     }
 
     .list_info h6 {
         flex: 0 0 auto;
     }
 
-    .list_info p {
-        align-items: center;
-        display: flex;
-        margin: auto 0 0 0;
-    }
 
-    .list_info p span {
-        display: inline-block;
-        overflow: hidden;
-        margin: 0 0 0 4px;
-        text-overflow: ellipsis;
-        width: calc(100% - 77%);
-        white-space: nowrap;
-    }
 }
 
 @media (min-width: 1380px) {
@@ -1681,7 +1699,9 @@ section {
 
 @media (min-width: 1400px) {
     .list_info p span {
-        width: calc(100% - 62%);
+        width: calc(100%);
+        margin-top: 5px;
+        /*width: calc(100% - 62%);*/
     }
 }
 
