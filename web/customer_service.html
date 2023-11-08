@@ -235,7 +235,7 @@
                 if (nvl(customerService.getMainNotice) != '') {
                     let list = customerService.getMainNotice;
                     for (let i = 0; i < list.length; i++) {
-                        $('#announcement-list').append(`<tr id="` + list[i].SEQ + `" class="bg_gray"><td><span>공지</span>` + list[i].TITLE + `</td></tr>`);
+                        $('#announcement-list').append(`<tr onclick="noticeDetailMove(this)" id="` + list[i].SEQ + `" class="bg_gray"><td><span>공지</span>` + list[i].TITLE + `</td></tr>`);
                     }
                 }
 
@@ -346,7 +346,7 @@
             if(list.list != ''){
                 list = list.list;
                 for(let i = 0; i < list.length; i++){
-                    $('#announcement-list').append(`<tr id="` + list[i].SEQ + `" ><td>` + list[i].TITLE + `</td></tr>`);
+                    $('#announcement-list').append(`<tr onclick="noticeDetailMove(this)" id="` + list[i].SEQ + `" ><td>` + list[i].TITLE + `</td></tr>`);
                 }
             }
         }

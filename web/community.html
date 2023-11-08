@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name=”format-detection” content=”no” />
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="">
+    <meta name="title" content="">
+    <meta name="Subject" content="">
+    <meta name="keywords" content="">
+    <meta name="Descript-xion" content="">
+    <meta name="Description" content="">
+
+    <link rel="icon" href="" type="image/x-icon" sizes="16x16">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>우리동네탐정</title>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="header-page"></div>
+
+        <div class="sub_wrap">
+            <!-- s: 상단광고 -->
+            <div class="swiper_wrap mo">
+                <div class="swiper mainSwiper02">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                                <img id="main-center-banner-mo" src="img/sample/sample_02.png" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                                <img src="img/sample/sample_03.png" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0);">
+                                <img src="img/sample/sample_04.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper_wrap pc">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-7">
+                            <img id="main-center-banner-pc" src="img/sample/sample_08.png" alt="">
+                        </div>
+                        <div class="col-5">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="img/sample/sample_09.png" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <img src="img/sample/sample_10.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- e: 상단광고 -->
+
+            <section class="consulting_wrap">
+                <div class="container">
+                    <div class="con_top">
+                        <h3>주제</h3>
+                        <ul>
+                            <li class="active">
+                                <a href="#">· 최신순</a>
+                            </li>
+                            <li>
+                                <a href="#">· 조회순</a>
+                            </li>
+                            <li>
+                                <a href="#">· 좋아요순</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="category_scroll">
+                        <div class="scroll_top">
+                            <button type="button" class="prev"><i class="i i_left"></i></button>
+                            <ul class="category">
+                            </ul>
+                            <button type="button" class="next"><i class="i i_right"></i></button>
+                            <button type="button" class="category_all"><i class="i i_three"></i></button>
+                        </div>
+                        <div class="select_category_wrap">
+                            <ul class="category">
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="con_body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="con_top">
+                                    <h3 id="totalCount">총 <span>0</span>건</h3>
+                                    <button onclick="freeWrite()" type="button">무료 글상담 작성하기</button>
+                                </div>  
+                            </div>
+                            <div class="col-12">
+                                <div class="content_box">
+                                    <ul class="writing"></ul>
+                                    <!--<ul class="writing">
+                                        <li>
+                                            <div class="writing_list">
+                                                <div class="badge_group">
+                                                    <span class="gray">교재개발/교수설계</span>
+                                                    <span class="gray">키즈엠</span>
+                                                </div>
+                                                <h1><span>Q.</span>당일퇴사, 인수인계 관련 손해배상</h1>
+                                                <p>안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="writing_list">
+                                                <div class="badge_group">
+                                                    <span class="gray">교재개발/교수설계</span>
+                                                    <span class="gray">키즈엠</span>
+                                                </div>
+                                                <h1><span>Q.</span>당일퇴사, 인수인계 관련 손해배상</h1>
+                                                <p>안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="writing_list">
+                                                <div class="badge_group">
+                                                    <span class="gray">교재개발/교수설계</span>
+                                                    <span class="gray">키즈엠</span>
+                                                </div>
+                                                <h1><span>Q.</span>당일퇴사, 인수인계 관련 손해배상</h1>
+                                                <p>안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="writing_list">
+                                                <div class="badge_group">
+                                                    <span class="gray">교재개발/교수설계</span>
+                                                    <span class="gray">키즈엠</span>
+                                                </div>
+                                                <h1><span>Q.</span>당일퇴사, 인수인계 관련 손해배상</h1>
+                                                <p>안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="writing_list">
+                                                <div class="badge_group">
+                                                    <span class="gray">교재개발/교수설계</span>
+                                                    <span class="gray">키즈엠</span>
+                                                </div>
+                                                <h1><span>Q.</span>당일퇴사, 인수인계 관련 손해배상</h1>
+                                                <p>안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.안녕하세요. 노무법인오늘 고양지사 문가람 노무사입니다. 회사가 인력이 부족하다거나 이직이 잦은곳이라면 근로자의 퇴사로인해 손해사 발생했다며 근로자에게 손해배상을 청구하겠다고 어깃장을 놓곤 합니다.</p>
+                                            </div>
+                                        </li>
+                                        
+                                    </ul>-->
+                                </div>
+                                <ul class="pagination" id="pagination">
+                                    <li class="prev">
+                                        <img src="img/icon/i_chevron_left.svg" alt="">
+                                    </li>
+                                    <li class="next">
+                                        <img src="img/icon/i_chevron_right.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+
+            <section class="ad_wrap">
+                <div class="item_area">
+                    <h4>스페셜 광고</h4>
+                    <div class="swiper_area mo">
+                        <div class="swiper special_ad">
+                            <div class="swiper-wrapper">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="special_wrap pc">
+                        <div class="swiper pc_special_ad">
+                            <div class="swiper-wrapper">
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+        <div class="footer-page"></div>
+
+    </div>
+
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script src="lib/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/partnerCommon.js"></script>
+
+    <script>
+
+        let itemsPerPage = 7; // 페이지당 보여줄 항목 수
+        let currentPageGroup = 1; // 현재 페이지 그룹
+        let itemsInGroup = 5; // 페이지 그룹 당 보여질 페이지 수
+        let totalItems = 0; // 총 갯수
+
+        let item = []; // 주제
+
+        $(document).ready(function(){
+            $(".header-page").load("/header.html");
+            $(".footer-page").load("/footer.html");
+
+            let param1 = {
+                COMPANY_CD : "1000",
+                FIELD_CD : "ES_Q0137",
+            }
+
+            //let codes = getCommonCode('local', param1).map;
+            let codes = getCommonCode('prod', param1).map;
+
+            if(codes != ''){
+                codes = codes.list;
+                $('.category').empty();
+                for(let i = 0; i < codes.length; i++){
+                    $('.category').append(`<li categoryCode="` + codes[i].CODE +`" >` + codes[i].NAME + `</li>`);
+                }
+            }
+
+            let param2 = {
+                COMPANY_CD : "1000",
+                COMMUNITY_TP : "02",
+            }
+
+            let consulting = getConsulting('prod', param2).map;
+            //let consulting = getConsulting('local', param2).map;
+
+            if(consulting != ''){
+
+                console.log("consulting", consulting);
+                //배너
+                if (nvl(consulting.center_banner_img) != '') {
+                    for (let i = 0; i < consulting.center_banner_img.length; i++) {
+                        if (consulting.center_banner_img[i].table_id == 'CENTER_BANNER_PC') {
+                            $('#main-center-banner-pc').attr('src', consulting.center_banner_img[i].img_url);
+                        } else {
+                            $('#main-center-banner-mo').attr('src', consulting.center_banner_img[i].img_url);
+                        }
+                    }
+                }
+
+                //광고
+                let blurbSpecial = nvl(consulting.blurbSpecial, []);
+                for(let i = 0; i < blurbSpecial.length; i++){
+                    let specialHtml =
+                        `<div class="swiper-slide">` +
+                        `<div class="special_box">` +
+                        `<img onError="this.src='img/sample/sample_01.png'" src="` + nvl(blurbSpecial[i].img_url) + `" alt="">` +
+                        `<div class="special_box_info">` +
+                        `<h1>` + nvl(blurbSpecial[i].partner_nm) + `</h1>` +
+                        `<p>무료상담 : ` + nvl(blurbSpecial[i].tel_no) + `</p>` +
+                        `<button onClick="blurbDetailPage(this)" id="` + nvl(blurbSpecial[i].partner_cd) + `" type="button">상세보기</button>` +
+                        `</div>` +
+                        `</div>` +
+                        `</div>`;
+
+                    $(".ad_wrap").find(".swiper-wrapper").append(specialHtml);
+                }
+
+                $('#totalCount').empty() // 자식요소 제거
+                $('#totalCount').append(`총 <span>` + nvl(consulting.getConsultingPaging, 0) + `</span>건`);
+
+                //페이징버튼 생성
+                if (nvl(consulting.getConsultingPaging, 0) > 0) {
+
+                    totalItems = consulting.getConsultingPaging; // 전체 항목 수
+                    generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup, listCallback);
+
+                    const page1Element = $("#pagination li:contains('1')"); // 페이지 번호가 1인 요소를 선택
+                    page1Element.click(); // 가상으로 클릭
+
+                }
+
+            }
+
+            // prev 버튼 클릭 시
+            $(".prev").on("click", function () {
+                $(".category").animate({scrollLeft: "-=100px"}, "slow");
+            });
+
+            // next 버튼 클릭 시
+            $(".next").on("click", function () {
+                $(".category").animate({scrollLeft: "+=100px"}, "slow");
+            });
+
+            // category_all 버튼 클릭 시
+            $(".category_all").on("click", function () {
+                $(".select_category_wrap").slideToggle("slow");
+            });
+
+            $(".category li").click(function () {
+                /*$(this).toggleClass("active");*/
+
+                let code = $(this).attr("categoryCode");
+                $('[categoryCode="' + code + '"]').toggleClass("active");
+                item = [];
+                let child = $('.category')[0].children;
+                for(let i = 0; i < child.length; i++){
+                    if(nvl($($('.category')[0].children[i]).attr('class')) == 'active'){
+                        /*categorycode*/
+                        item.push(nvl($($('.category')[0].children[i]).attr('categorycode')));
+                    }
+                }
+
+                pageSearch();
+
+            });
+
+
+        });
+
+        function freeWrite(){
+            window.location.href = 'write.html?communityTp=02';
+        }
+
+        function pageSearch(){
+            var COMMUNITY_ST = item.join('|');
+
+            let param = {
+                COMPANY_CD : "1000",
+                COMMUNITY_TP : "02",
+                COMMUNITY_ST : COMMUNITY_ST,
+            }
+
+            //let consulting = getConsulting('local', param).map;
+            let consulting = getConsulting('prod', param).map;
+
+            totalItems = consulting.getConsultingPaging; // 전체 항목 수
+            generatePaging(totalItems, itemsPerPage, currentPageGroup, itemsInGroup, listCallback);
+            const page1Element = $("#pagination li:contains('1')"); // 페이지 번호가 1인 요소를 선택
+            page1Element.click(); // 가상으로 클릭
+
+        }
+
+        //게시글처리
+        let listCallback = function (page){
+
+            var COMMUNITY_ST = item.join('|');
+
+            let param = {
+                COMPANY_CD : "1000",
+                COMMUNITY_TP : "02",
+                COMMUNITY_ST : COMMUNITY_ST,
+                LIMIT : itemsPerPage,
+                OFFSET : parseInt(page) -1,
+            }
+
+            //let list = nvl(getConsultingList('local', param).map);
+            let list = nvl(getConsultingList('prod', param).map);
+
+            $('.writing').empty() // 자식요소 제거
+            if(list != ''){
+                list = list.list;
+                for(let i = 0; i < list.length; i++){
+                    $('.writing').append(`
+                        <li onclick="communityDetail(this)" id="` + list[i].SEQ + `">
+                            <div class="writing_list">
+                                <h1>` + list[i].TITLE + `</h1>
+                                <p>` + list[i].CONTENTS + `</p>
+                                <div class="writing_info">
+                                    <!--<div class="user_img"></div>-->
+                                    <span class="user_name">` + list[i].NAME + `</span>
+                                    <ul>
+                                        <li>조회<span>0건</span></li>
+                                        <li>답변<span>0건</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    `);
+
+                }
+            }
+
+
+
+
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

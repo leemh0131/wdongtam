@@ -490,7 +490,7 @@
                 for(let i = 0; i <res.getMainNotice.length; i++){
                     let list = res.getMainNotice;
                     $('#mainNotice').append(
-                        `<li id="` + list[i].SEQ + `">
+                        `<li onclick="noticeDetailMove(this)" id="` + list[i].SEQ + `">
                         <dl>
                         <dt>` + list[i].TITLE + `</dt>
                         <dd>` + list[i].DTS + `</dd>

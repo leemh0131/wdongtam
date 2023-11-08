@@ -805,3 +805,81 @@ function getReviewList(api, param){
     return result;
 
 }
+
+function getBannerimg(api){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    let param = {
+        COMPANY_CD : '1000',
+        IMG_URL : url + '/PARTNER_TEMP/',
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getBannerimg"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
+function getNoticeDetail(api, param){
+
+    let result;
+    let url;
+
+    if(api == 'local'){
+        url = localApiUrl;
+    } else if(api == 'dev'){
+        url = devApiUrl;
+    } else if(api == 'prod'){
+        url = prodApiUrl;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: [url + "/api/web/v1/getNoticeDetail"],
+        contentType: "application/json; charset=UTF-8",
+        async : false,
+        data: JSON.stringify(param),
+        success: function (res) {
+            result = res;
+        },
+        error: function (x, o, e) {
+            result = {x : x, o : o, e : e};
+        }
+    });
+
+    return result;
+
+}
+
+function noticeDetailMove(e){
+
+    if(nvl(e.id) != ''){
+        window.location.href = 'noticeDetail.html?seq=' + nvl(e.id);
+    } else {
+        alert("네트워크 오류");
+    }
+
+
+}

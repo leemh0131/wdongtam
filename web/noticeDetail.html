@@ -76,32 +76,14 @@
             <section class="write_wrap">
                 <div class="container">
                     <div class="con_top">
-                        <h3>작성하기</h3>
+                        <h3 id="title"></h3>
+                        <p><span id="dts"></span></p>
                     </div>
                     <div class="con_body">
-                        <div class="input_wrap">
-                            <div class="custom_select">
-                                <span class="selected_option">주제</span>
-                                <ul class="options">
-                                    <!--<li data-value="option1">옵션 1</li>
-                                    <li data-value="option2">옵션 2</li>
-                                    <li data-value="option3">옵션 3</li>-->
-                                </ul>
-                            </div>
-                            <div class="input_group">
-                                <input id="name" type="text" placeholder="작성자">
-                            </div>
-                            <div class="input_group">
-                                <input id="title" type="text" placeholder="제목">
-                            </div>
-                            <div class="input_group">
-                                <textarea name="" id="contents" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
-                            </div>
-                        </div>
+
                     </div>
                     <div class="con_fot">
                         <div class="btn_group">
-                            <button onclick="writing();" type="button" class="btn_check">확인</button>
                             <button onclick="window.history.back()" type="button" class="btn_close back_button">뒤로</button>
                         </div>
                     </div>
@@ -125,9 +107,9 @@
         const url = new URL(window.location.href);
         // URLSearchParams 객체
         const urlParams = url.searchParams;
-        let communityTp = nvl(urlParams.get('communityTp'));
+        let seq = nvl(urlParams.get('seq'));
 
-        if(communityTp == ''){
+        if(seq == ''){
             alert("잘못된경로로 들어왔습니다.");
             window.history.back();
         }
@@ -137,22 +119,7 @@
             $(".header-page").load("/header.html");
             $(".footer-page").load("/footer.html");
 
-            let param = {
-                COMPANY_CD : "1000",
-                FIELD_CD : "ES_Q0137",
-            }
-
-            let codes = getCommonCode('prod', param).map;
-            //let codes = getCommonCode('local', param).map;
-
-            if(codes != ''){
-                codes = codes.list;
-                $('.options').empty();
-                for(let i = 0; i < codes.length; i++){
-                    $('.options').append(`<li data-value="` + codes[i].CODE + `">` + codes[i].NAME + `</li>`);
-                }
-            }
-
+            //let img = nvl(getBannerimg('local').map);
             let img = nvl(getBannerimg('prod').map);
 
             //배너
@@ -166,88 +133,28 @@
                 }
             }
 
-        });
-
-        $(document).on("click", ".options li", function(e) {
-            // 클릭 이벤트 처리
-            let code = $(this).data("value");
-            let text = e.target.textContent;
-            $('.selected_option').text(text);
-            $('.selected_option').attr('id', code);
-        });
-
-        function writing(){
-
-            let COMMUNITY_ST = nvl($('.selected_option').attr('id'));
-            let TITLE = nvl($('#title').val());
-            let CONTENTS = nvl($('#contents').val());
-            let NAME = nvl($('#name').val());
-
-            if(TITLE == ''){
-                alert("제목을 입력해주세요");
-            }
-
-            if(NAME == ''){
-                alert("작성자를 입력해주세요");
-            }
-
-            if(CONTENTS == ''){
-                alert("내용을 입력해주세요");
-            }
-
-            if(COMMUNITY_ST == ''){
-                alert("주제를 선택해주세요.");
-            }
-
             let param = {
-                COMPANY_CD : '1000',
-                COMMUNITY_TP : communityTp,
-                COMMUNITY_ST : COMMUNITY_ST,
-                TITLE : TITLE,
-                NAME : NAME,
-                CONTENTS : CONTENTS
+                COMPANY_CD : "1000",
+                SEQ : Number(seq),
             }
 
-            //let result = setWrite('local', param);
-            let result = setWrite('prod', param);
+            let item = nvl(getNoticeDetail('prod', param).map);
+            //let item = nvl(getNoticeDetail('local', param).map);
 
-            try {
+            if(nvl(item.item[0]) != ''){
+                item = item.item[0];
+                $("#title").html(nvl(item.TITLE));
+                $("#dts").html(nvl(item.DTS));
+                $(".con_body").html(nvl(item.CONTENTS));
 
-                if(nvl(result.map) != ''){
-                    result = result.map;
 
-                    if(nvl(result.response) == 'ok'){
-                        alert("작성이 완료되었습니다.");
-                        if(communityTp == '01'){
-                            location.href = '/consulting.html';
-                        } else {
-                            location.href = '/community.html';
-                        }
-                    } else {
-                        throw "Error";
-                    }
-
-                }
-
-            } catch (e){
-                alert("네트워크 오류발행");
-                return;
             }
 
-        }
 
-        // 커스텀 select box 열기/닫기 이벤트
-        $(".custom_select").click(function () {
-            var $options = $(this).find(".options");
-            $options.toggleClass("open");
+
         });
 
-        // 커스텀 select box 외부 클릭 시 닫기
-        $(document).click(function (e) {
-            if (!$(e.target).closest(".custom_select").length) {
-                $(".options").removeClass("open");
-            }
-        });
+
 
 
     </script>
