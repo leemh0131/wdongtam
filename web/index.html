@@ -321,15 +321,17 @@
                     let html = col3Content;
                     html = html.replace('img_url', nvl(vvvipMain[i].img_url));
                     html = html.replace('partner_nm', nvl(vvvipMain[i].partner_nm));
-                    html = html.replace('partner_cd', nvl(vvvipMain[i].partner_cd));
+                    html = html.replaceAll('partner_cd', nvl(vvvipMain[i].partner_cd));
                     html = html.replace('company_intro', nvl(vvvipMain[i].company_intro));
                     html = html.replace('a_no', 'tel:' + nvl(vvvipMain[i].tel_no));
                     html = html.replace('tel_no', nvl(vvvipMain[i].tel_no));
                     $("main.pc section.section_01 div.row").append(html);
+                    //debugger
 
                     let moHtml = moContent;
                     moHtml = moHtml.replace('img_url', vvvipMain[i].img_url);
                     moHtml = moHtml.replace('partner_nm', vvvipMain[i].partner_nm);
+                    moHtml = moHtml.replaceAll('partner_cd', nvl(vvvipMain[i].partner_cd));
                     moHtml = moHtml.replace('company_intro', vvvipMain[i].company_intro);
                     moHtml = moHtml.replace('tel_no', vvvipMain[i].tel_no);
                     $("main.mo section.section_01").find(".swiper-wrapper").append(moHtml);
@@ -395,7 +397,7 @@
 
                     html = html.replace('img_url', nvl(vvipBox[i].img_url));
                     html = html.replace('partner_nm', nvl(vvipBox[i].partner_nm));
-                    html = html.replace('partner_cd', nvl(vvipBox[i].partner_cd));
+                    html = html.replaceAll('partner_cd', nvl(vvipBox[i].partner_cd));
                     html = html.replace('company_intro', nvl(vvipBox[i].company_intro));
                     html = html.replace('tel_no', nvl(vvipBox[i].tel_no));
                     $("main.pc section.section_03 div.row").append(html);
@@ -404,9 +406,9 @@
 
                     moHtml = moHtml.replace('img_url', nvl(vvipBox[i].img_url));
                     moHtml = moHtml.replace('partner_nm', nvl(vvipBox[i].partner_nm));
-                    moHtml = moHtml.replace('partner_cd', nvl(vvipBox[i].partner_cd));
-                    moHtml = moHtml.replace('company_intro', nvl(vvipBox[i].company_intro));
-                    moHtml = moHtml.replace('tel_no', nvl(vvipBox[i].tel_no));
+                    moHtml = moHtml.replaceAll('partner_cd', nvl(vvipBox[i].partner_cd));
+                    moHtml = moHtml.replaceAll('company_intro', nvl(vvipBox[i].company_intro));
+                    moHtml = moHtml.replaceAll('tel_no', nvl(vvipBox[i].tel_no));
                     moHtml = moHtml.replace('a_no', 'tel:' + nvl(vvipBox[i].tel_no));
                     $("main.mo section.section_04").find(".swiper-wrapper").append(moHtml);
 
@@ -456,14 +458,14 @@
 
                     let html = vipCol3Content;
                     html = html.replace('partner_nm', nvl(vipBox[i].partner_nm));
-                    html = html.replace('partner_cd', nvl(vipBox[i].partner_cd));
+                    html = html.replaceAll('partner_cd', nvl(vipBox[i].partner_cd));
                     html = html.replace('company_intro', nvl(vipBox[i].company_intro));
                     html = html.replace('tel_no', nvl(vipBox[i].tel_no));
                     $("main.pc section.section_04 div.row").append(html);
 
                     let moHtml = moContent;
                     moHtml = moHtml.replace('partner_nm', nvl(vipBox[i].partner_nm));
-                    moHtml = moHtml.replace('partner_cd', nvl(vipBox[i].partner_cd));
+                    moHtml = moHtml.replaceAll('partner_cd', nvl(vipBox[i].partner_cd));
                     moHtml = moHtml.replace('company_intro', nvl(vipBox[i].company_intro));
                     $("main.mo section.section_05").find(".swiper-wrapper").append(moHtml);
 

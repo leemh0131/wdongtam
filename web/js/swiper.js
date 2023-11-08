@@ -41,7 +41,7 @@ function windowresize() {
                 el: ".swiper-pagination",
             },
         });
-    } else if (window.innerWidth <= 992 && window.innerWidth >= 500) {
+    } else {
         // S : 모바일 서브 스페셜 광고(specialAd)
         var specialAd = new Swiper(".special_ad", {
             slidesPerView: 3,
@@ -103,31 +103,8 @@ function windowresize() {
             slidesOffsetAfter: 20, // 슬라이드 오른쪽 여백
             loop: false, // 무한반복
         });
-    } else {
-        // 디바이스 크기가 600px 이하일 때
 
-        // S : 모바일 서브 스페셜 광고(specialAd)
-        var specialAd = new Swiper(".special_ad", {
-            slidesPerView: 1.8,
-            spaceBetween: 16, // 슬라이드 여백
-            centeredSlides: false, // 슬라이드 중앙정렬
-            loop: false, // 무한반복
-            slidesOffsetBefore: 20, // 슬라이드 오른쪽 여백
-            slidesOffsetAfter: 20, // 슬라이드 오른쪽 여백
-            autoplay: {
-                delay: 2000,
-            },
-        });
 
-        // mainSwiper02
-        var mainSwiper02 = new Swiper(".mainSwiper02", {
-            slidesPerView: 2.3,
-            spaceBetween: 20, // 슬라이드 여백
-            centeredSlides: false, // 슬라이드 중앙정렬
-            slidesOffsetBefore: 20, // 슬라이드 오른쪽 여백
-            slidesOffsetAfter: 20, // 슬라이드 오른쪽 여백
-            loop: false, // 무한반복
-        });
     }
 
 }

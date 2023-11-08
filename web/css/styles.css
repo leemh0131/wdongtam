@@ -1635,6 +1635,15 @@ section {
     -webkit-line-clamp: 2;
 }
 
+.list_info p span {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 0 0 0 4px;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
 @media (min-width: 992px) {
     .content {
         padding: 80px 0 0 0;
@@ -1678,7 +1687,7 @@ section {
         width: calc(100% - 77%);
         -webkit-line-clamp: 2;
         text-overflow: ellipsis;
-        -webkit-box-orient: vertical
+        -webkit-box-orient: vertical;
         /*white-space: nowrap;*/
     }
 
@@ -1707,7 +1716,6 @@ section {
     .list_info p span {
         width: calc(100%);
         margin-top: 5px;
-        /*width: calc(100% - 62%);*/
     }
 }
 
@@ -2498,4 +2506,10 @@ section {
         padding: 8px 0;
         width: 50%;
     }
+}
+
+.modal-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
 }
